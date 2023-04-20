@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Contact form -->
+<div class="contact-form container">
+    <h5 style="color: #636363; margin-top: 100px;">Fill in the form to come in contact with us.</h5>
+    <form action="" class="form">
+        <span class="split-input">
+            <span>
+                <label for="fullName">Your Name*</label>
+                <input name="fullName" type="text">
+            </span>
+            <span>
+                <label for="email">Your Email*</label>
+                <input name="email" type="email">
+            </span>
+        </span>
+
+        <span class="split-input">
+            <span>
+                <label for="phoneNumber">Phone Number</label>
+                <input name="phoneNumber" type="text">
+            </span>
+            <span>
+                <label for="company">Company (optional)</label>
+                <input name="company" type="text">
+            </span>
+        </span>
+        <label for="message" style="margin-bottom: -20px;">Message*</label>
+        <textarea name="message" id="" cols="20" rows="5"></textarea>
+
+        <span class="radio-input">
+            <label for="agreements"><input type="radio" name="agreements" id=""><i class="fa-solid fa-check"></i>Save my name, email, and website in this browser for the next time I comment.</label>
+        </span>
+
+        <button class="btn-theme">Submit</button>
+    </form>
+</div>

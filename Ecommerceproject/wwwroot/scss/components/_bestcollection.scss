@@ -1,0 +1,31 @@
+.best-collection {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 90px 0;
+
+    .categories {
+        text-align: center;
+    }
+    .productcards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    .load-btn {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+        
+        &:hover  i {
+            animation: rotate 0.3s linear;
+        }
+    }
+
+    @keyframes rotate {
+        100% {transform: rotate(360deg);}
+      }
+}

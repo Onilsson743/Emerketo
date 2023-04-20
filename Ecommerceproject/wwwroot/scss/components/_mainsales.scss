@@ -1,0 +1,48 @@
+.main-sales {
+    padding: 75px 0;
+    background-color: $color-theme-2;
+    .container {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card {
+            width: 25rem;
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+        .info-card {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 47px;
+            gap: 20px;
+
+            h6 {
+                color: $color-theme-1;
+                font-size: 18px;
+                font-weight: $font-weight-bold;
+            }
+            h1 {
+                font-size: 48px;
+                font-weight: 100;
+            }
+            h5 {
+                font-weight: bold;
+                font-size: 24px;
+            }
+            p {
+                color: $color-gray-2;
+            }
+            a {
+                &:hover {
+                    scale: 1.2;
+                }
+            }
+
+        }
+    }
+}

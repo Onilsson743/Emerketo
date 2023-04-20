@@ -1,0 +1,20 @@
+﻿
+@{
+    var test = new DataServices();
+}
+
+<div class="container best-collection ">
+    <h1>Best Collection</h1>
+    <p class="categories">All ⁄ Bags ⁄ Dress ⁄ Decoration ⁄ Essentials ⁄ Interior ⁄ Laptop ⁄ Mobile ⁄ Beauty</p>
+    <section class="productcards">
+
+        @foreach (var product in test.ProductList)
+        {
+            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+        }
+    </section>
+    <button class="btn-theme load-btn">
+        LOAD MORE
+        <i class="fa-solid fa-arrow-rotate-right"></i>
+    </button>
+</div>

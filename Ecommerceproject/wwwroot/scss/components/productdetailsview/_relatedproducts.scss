@@ -1,0 +1,24 @@
+.related-products {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    gap: 20px;
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        @include md {
+            text-align: left;
+        }
+    }
+    .productcards {
+        display: flex;
+        justify-content: center;
+        row-gap: 40px;
+        flex-wrap: wrap;
+        @include md {
+            justify-content: space-between;
+        }
+    }
+}

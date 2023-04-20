@@ -1,0 +1,14 @@
+﻿@model ProductModel;
+
+<div class="card" style="width: 270px;">
+    <img src="@Model.ProductImageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProductName</h5>
+        <span>
+            <p class="card-text">$@Model.Price</p>
+            <button>
+                <i class="fa-regular fa-cart-plus"></i>
+            </button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@{
+    var products = new DataServices();
+}
+
+<div class="container">
+    <button class="btn-theme">
+        <a class="nav-link" asp-controller="Admin" asp-action="AddProduct">Add Product</a>
+    </button>    
+</div>
+<div class="container ">
+    @{
+        foreach (var product in products.ProductList)
+        {
+            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+        }
+    }
+</div>

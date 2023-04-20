@@ -1,0 +1,65 @@
+﻿@{
+    var test = new DataServices();
+}
+
+
+<div class="top-sellers-carousel">
+    <h1>Top selling products in this week</h1>
+    <section class="productcards">
+        @foreach (var product in test.ProductList)
+        {
+            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+        }
+    </section>
+    <span class="navigate-buttons">
+        <button><i class="fa-solid fa-angle-left"></i></i></button>
+        <button><i class="fa-solid fa-angle-right"></i></button>
+    </span>
+    <div class="container lower-products">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Table lamp 1562 LTG modal</h5>
+                <p class="description">
+                    Best dress for everyone ed totam velit risus viverra
+                    nobis donec recusandae perspiciatis incididuno
+                </p>
+                <span>
+                    <p class="card-text">POST BY: ADMIN</p>
+                    <p class="card-text">COMMENTS: 13</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Table lamp 1562 LTG modal</h5>
+                <p class="description">
+                    Best dress for everyone ed totam velit risus viverra
+                    nobis donec recusandae perspiciatis incididuno
+                </p>
+                <span>
+                    <p class="card-text">POST BY: ADMIN</p>
+                    <p class="card-text">COMMENTS: 13</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Table lamp 1562 LTG modal</h5>
+                <p class="description">
+                    Best dress for everyone ed totam velit risus viverra
+                    nobis donec recusandae perspiciatis incididuno
+                </p>
+                <span>
+                    <p class="card-text">POST BY: ADMIN</p>
+                    <p class="card-text">COMMENTS: 13</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+

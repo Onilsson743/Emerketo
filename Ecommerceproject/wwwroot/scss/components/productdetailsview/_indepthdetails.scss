@@ -1,0 +1,33 @@
+.indepth-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .detail-buttons {
+        display: flex;
+        flex-direction: column;
+        @include xl {
+            flex-direction: row;
+        }
+        button {
+            width: 100%;
+            &:hover {
+                background-color: $color-theme-1;
+                color: black;
+            }
+        }
+    }
+    .description {
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+       h1 {
+        font-size: 24px;
+       }
+       p {
+        @include xxl {
+            width: 60%;
+        }
+       }
+       
+    }
+}
