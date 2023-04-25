@@ -25,5 +25,5 @@ public class ProductEntity
     [Required]
     public int ProductInStock { get; set; }
     public string ProductImageUrl { get; set; } = null!;
-    public ICollection<ColourEntity>? Colours { get; set; } = null!;
+    public ICollection<ProductColoursEntity> Colours { get; set; } = new List<ProductColoursEntity>();
 }

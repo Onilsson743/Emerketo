@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerceproject.Models.Entities;
 
-public class UserEntity 
+public class UserEntity : IdentityUser
 {
     [Key]
     public int Id { get; set; }
@@ -15,16 +15,8 @@ public class UserEntity
 
     [StringLength(50)]
     public string LastName { get; set; } = null!;
-
-    [StringLength(100)]
-    public string Email { get; set; } = null!;
-
-    [Column(TypeName = "char(13)")]
-    public string PhoneNumber { get; set; } = null!;
-
     public int? AdressId { get; set; }
     public AdressEntity Adress { get; set; } = null!;
     public ICollection<OrderEntity> Orders { get; set; } = null!;
 
-    public IdentityUser User { get; set; } = null!;
 }
