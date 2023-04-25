@@ -1,0 +1,71 @@
+﻿@model RegistrationViewModel
+
+<div class="container mt-4" >
+    <h5>Please Register Your new Account</h5>
+    <form method="post" class="form">
+        <span class="split-input">
+            <span>
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" type="text">
+                <small class="text-danger"><span asp-validation-for="FirstName"></span></small>
+            </span>
+            <span>
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" type="text">
+                <small class="text-danger"><span asp-validation-for="LastName"></span></small>
+            </span>
+        </span>
+
+        <label asp-for="StreetName"></label>
+        <input asp-for="StreetName" type="text">
+        <small class="text-danger"><span asp-validation-for="StreetName"></span></small>
+
+        <span class="split-input">
+            <span>
+                <label asp-for="PostalCode"></label>
+                <input asp-for="PostalCode" type="text">
+                <small class="text-danger"><span asp-validation-for="PostalCode"></span></small>
+            </span>
+            <span>
+                <label asp-for="City"></label>
+                <input asp-for="City" type="text">
+                <small class="text-danger"><span asp-validation-for="City"></span></small>
+            </span>
+        </span>
+
+        <span class="split-input">
+            <span>
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" type="text">
+            </span>
+            <span>
+                <label asp-for="Company"></label>
+                <input asp-for="Company" type="text">
+            </span>
+        </span>
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="text">
+        <small class="text-danger"><span asp-validation-for="Email"></span></small>
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="text">
+        <small class="text-danger"><span asp-validation-for="Password"></span></small>
+
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" type="text">
+        <small class="text-danger"><span asp-validation-for="ConfirmPassword"></span></small>
+
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" type="text">
+
+        <span>
+            <input asp-for="TermsAndAgreements" type="checkbox" />
+            <label asp-for="TermsAndAgreements"></label>
+        </span>
+        
+
+
+        <button class="btn-theme">Submit</button>
+    </form>
+</div>

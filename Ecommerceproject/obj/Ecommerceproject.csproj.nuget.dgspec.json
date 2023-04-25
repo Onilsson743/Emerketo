@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\Ecommerceproject.csproj": {}
+    "C:\\Users\\onils\\Desktop\\Ny mapp\\Inlämningsuppgift\\Ecommerceproject\\Ecommerceproject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\Ecommerceproject.csproj": {
+    "C:\\Users\\onils\\Desktop\\Ny mapp\\Inlämningsuppgift\\Ecommerceproject\\Ecommerceproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\Ecommerceproject.csproj",
+        "projectUniqueName": "C:\\Users\\onils\\Desktop\\Ny mapp\\Inlämningsuppgift\\Ecommerceproject\\Ecommerceproject.csproj",
         "projectName": "Ecommerceproject",
-        "projectPath": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\Ecommerceproject.csproj",
+        "projectPath": "C:\\Users\\onils\\Desktop\\Ny mapp\\Inlämningsuppgift\\Ecommerceproject\\Ecommerceproject.csproj",
         "packagesPath": "C:\\Users\\onils\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\obj\\",
+        "outputPath": "C:\\Users\\onils\\Desktop\\Ny mapp\\Inlämningsuppgift\\Ecommerceproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,19 +45,27 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.4, )"
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
@@ -79,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

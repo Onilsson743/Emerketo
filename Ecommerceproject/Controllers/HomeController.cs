@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Ecommerceproject.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerceproject.Controllers;
 
@@ -14,5 +15,15 @@ public class HomeController : Controller
     {
         ViewData["Title"] = "Contact";
         return View();
+    }
+    [HttpPost]
+    public IActionResult Contact(ContactUsFormViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction("Index");
+        }
+        ModelState.AddModelError("", "A user with the same email already exists");
+        return View(model);
     }
 }

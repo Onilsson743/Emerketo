@@ -2,16 +2,19 @@
     var products = new DataServices();
 }
 
-<div class="container">
-    <button class="btn-theme">
-        <a class="nav-link" asp-controller="Admin" asp-action="AddProduct">Add Product</a>
-    </button>    
-</div>
-<div class="container ">
-    @{
-        foreach (var product in products.ProductList)
-        {
-            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+<div class="container all-products">
+
+    <div class="products">
+        @{
+            foreach (var product in products.ProductList)
+            {
+                <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+            }
         }
-    }
+    </div>
+
+
+    <button class="btn-theme fixed-btn">
+        <a asp-controller="Admin" asp-action="AddProduct">Add Product</a>
+    </button>    
 </div>

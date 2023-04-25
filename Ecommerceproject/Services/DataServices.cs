@@ -43,6 +43,48 @@ public class DataServices
             Price = 50,
             ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
         },
+            new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+              new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+                new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+                  new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+                    new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+                      new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
+                        new ProductModel()
+        {
+            ProductName = "Title6",
+            Price = 50,
+            ProductImageUrl = "https://cdn.pixabay.com/photo/2017/01/22/12/08/imac-1999642_1280.png"
+        },
 
     };
 }

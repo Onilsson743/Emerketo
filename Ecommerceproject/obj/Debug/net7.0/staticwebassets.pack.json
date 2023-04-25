@@ -1,95 +1,99 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\Images\\Logo.svg",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\Images\\Logo.svg",
       "PackagePath": "staticwebassets\\Images\\Logo.svg"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "PackagePath": "staticwebassets\\Images\\Stars.svg"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\css\\style.min.css",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\css\\style.min.css",
       "PackagePath": "staticwebassets\\css\\style.min.css"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_allproducts.scss"
+    },
+    {
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_bestcollection.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_footer.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_footer.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_footer.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_header.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_header.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_header.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_mainsales.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_mainsales.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_mainsales.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_maintopselling.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_maintopselling.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_maintopselling.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_navbar.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_navbar.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_navbar.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_subscribe.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_headerpicture.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_headerpicture.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_headerpicture.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_indepthdetails.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_indepthdetails.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_indepthdetails.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_lowerproductrow.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_lowerproductrow.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_lowerproductrow.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_productoverview.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_productoverview.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_productoverview.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_relatedproducts.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_relatedproducts.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_relatedproducts.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\global\\_elements.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\global\\_elements.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_elements.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\global\\_globalthemes.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\global\\_globalthemes.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_globalthemes.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\global\\_mixins.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\global\\_mixins.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_mixins.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\global\\_theme.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\global\\_theme.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_theme.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\C-Sharp\\Ecommerce\\Ecommerceproject\\wwwroot\\scss\\style.scss",
+      "Id": "C:\\Users\\onils\\OneDrive\\Skrivbord\\Win22\\ASP.NET\\Inlämningsuppgift\\Ecommerceproject\\wwwroot\\scss\\style.scss",
       "PackagePath": "staticwebassets\\scss\\style.scss"
     },
     {

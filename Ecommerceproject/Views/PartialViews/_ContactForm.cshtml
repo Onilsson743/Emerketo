@@ -1,40 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ContactUsFormViewModel
+
 <!-- Contact form -->
 <div class="contact-form container">
     <h5 style="color: #636363; margin-top: 100px;">Fill in the form to come in contact with us.</h5>
-    <form action="" class="form">
+    <form action="post" class="form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <span class="split-input">
             <span>
-                <label for="fullName">Your Name*</label>
-                <input name="fullName" type="text">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text">
+                <small class="text-danger"><span asp-validation-for="Name"></span></small>
             </span>
             <span>
-                <label for="email">Your Email*</label>
-                <input name="email" type="email">
+                <label asp-for="Email"></label>
+                <input asp-for="Email">
+                <small class="text-danger"><span asp-validation-for="Email"></span></small>
             </span>
         </span>
 
         <span class="split-input">
             <span>
-                <label for="phoneNumber">Phone Number</label>
-                <input name="phoneNumber" type="text">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" type="text">
+                <small class="text-danger"><span asp-validation-for="PhoneNumber"></span></small>
             </span>
             <span>
-                <label for="company">Company (optional)</label>
-                <input name="company" type="text">
+                <label asp-for="Company"></label>
+                <input asp-for="Company" type="text">
+                <small class="text-danger"><span asp-validation-for="Company"></span></small>
             </span>
         </span>
-        <label for="message" style="margin-bottom: -20px;">Message*</label>
-        <textarea name="message" id="" cols="20" rows="5"></textarea>
+        <label asp-for="Message" style="margin-bottom: -20px;"></label>
+        <textarea asp-for="Message" id="" cols="20" rows="5"></textarea>
+        <small class="text-danger"><span asp-validation-for="Message"></span></small>
 
-        <span class="radio-input">
-            <label for="agreements"><input type="radio" name="agreements" id=""><i class="fa-solid fa-check"></i>Save my name, email, and website in this browser for the next time I comment.</label>
-        </span>
+       
+        <label asp-for="TermsAndAgreements"></label>
+        <input asp-for="TermsAndAgreements" type="checkbox"/>
+        
+        @*<span class="radio-input">
+            <label asp-for="TermsAndAgreements"><input type="checkbox" name="agreements" id=""><i class="fa-solid fa-check"></i>Save my name, email, and website in this browser for the next time I comment.</label>
+        </span>*@
 
-        <button class="btn-theme">Submit</button>
+        <button type="submit" class="btn-theme">Submit</button>
     </form>
 </div>

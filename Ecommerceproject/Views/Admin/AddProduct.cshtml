@@ -5,7 +5,48 @@
     product.Colours.Add("Red");
     product.Colours.Add("Green");
 }
+@model AddProductViewModel
 
-<partial name="/Views/PartialViews/_AddProduct.cshtml" />
+<div class="AddProductForm container">
+    <h5 style="color: #636363; margin-top: 100px;">Add a new product.</h5>
+    <form action="" class="form mt-4">
+        <span class="split-input">
+            <span>
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" type="text">
+            </span>
+            <span>
+                <label asp-for="Price"></label>
+                <input asp-for="Price" type="number">
+            </span>
+        </span>
+
+        <span class="split-input">
+            <span>
+                <label asp-for="ProductCategory"></label>
+                <input asp-for="ProductCategory" type="text">
+            </span>
+            <span>
+                <label asp-for="ProductImageUrl"></label>
+                <input asp-for="ProductImageUrl" type="text">
+            </span>
+        </span>
+        <label for="productDescription" style="margin-bottom: -20px;">Product Description</label>
+        <textarea name="productDescription" id="" cols="20" rows="5"></textarea>
+
+        
+        <div>
+            <h6><strong>Select all the available colours</strong></h6>
+            @foreach (string colour in product.Colours)
+            {
+                <label asp-for="@colour">@colour</label>
+                <input asp-for="@colour" type="checkbox" id="@colour" value="@colour" />
+            }
+        </div>
+       
+
+        <button class="btn-theme">Add Product</button>
+    </form>
+</div>
 
 

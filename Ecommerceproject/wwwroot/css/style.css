@@ -726,3 +726,18 @@ a:hover {
 .lower-product-row .container img:hover {
   scale: 1.2;
 }
+
+.all-products {
+  display: flex;
+}
+.all-products .products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.all-products .fixed-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+}

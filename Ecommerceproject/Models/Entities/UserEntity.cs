@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerceproject.Models.Entities;
 
-public class UserEntity
+public class UserEntity 
 {
     [Key]
     public int Id { get; set; }
@@ -19,9 +20,11 @@ public class UserEntity
     public string Email { get; set; } = null!;
 
     [Column(TypeName = "char(13)")]
-    public string Phone { get; set; } = null!;
+    public string PhoneNumber { get; set; } = null!;
 
     public int? AdressId { get; set; }
     public AdressEntity Adress { get; set; } = null!;
     public ICollection<OrderEntity> Orders { get; set; } = null!;
+
+    public IdentityUser User { get; set; } = null!;
 }

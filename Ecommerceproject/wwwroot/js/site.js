@@ -17,8 +17,9 @@ function SetBreadcrumb() {
     list.shift()
     list.shift()
     list.shift()
+    
 
-    var currentPage
+    var currentPage = ""
     for (var i = 0; i < list.length; i++) {
         currentPage = currentPage + " " + list[i]
     }
