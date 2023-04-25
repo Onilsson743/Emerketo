@@ -5,7 +5,7 @@ namespace Ecommerceproject.Models.Entities;
 public class OrderItemsEntity
 {
     [Key]
-    public int OrderItemsId { get; set; }
+    public int Id { get; set; }
     public int ProductId { get; set; }
     public ProductEntity Product { get; set; } = null!;
     public int Quantity { get; set; }

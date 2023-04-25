@@ -1,9 +1,12 @@
-﻿namespace Ecommerceproject.Models.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Ecommerceproject.Models.Entities;
 
 public class OrderEntity
 {
+    [Key]
     public int Id { get; set; }
-    public ICollection<OrderItemsEntity> OrderItems { get; set; }
+    public ICollection<OrderItemsEntity> OrderItems { get; set; } = new List<OrderItemsEntity>();
     public int UserId { get; set; }
     public UserEntity User { get; set; } = null!;
     public int AdressId { get; set; }

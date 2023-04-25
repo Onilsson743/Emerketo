@@ -4,6 +4,7 @@ using Ecommerceproject.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerceproject.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230425133859_NameChange")]
+    partial class NameChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,23 +68,6 @@ namespace Ecommerceproject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CartEntity");
-                });
-
-            modelBuilder.Entity("Ecommerceproject.Models.Entities.CategoriesEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ColourEntity", b =>
@@ -194,20 +180,11 @@ namespace Ecommerceproject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoriesId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategories");
                 });
@@ -249,6 +226,13 @@ namespace Ecommerceproject.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
+                    b.Property<string>("ProductCategory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ProductCategoryEntityId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProductDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -268,6 +252,8 @@ namespace Ecommerceproject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderStatusEntityId");
+
+                    b.HasIndex("ProductCategoryEntityId");
 
                     b.ToTable("Products");
                 });
@@ -549,25 +535,6 @@ namespace Ecommerceproject.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductCategoryEntity", b =>
-                {
-                    b.HasOne("Ecommerceproject.Models.Entities.CategoriesEntity", "Categories")
-                        .WithMany("ProductCategories")
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Ecommerceproject.Models.Entities.ProductEntity", "Product")
-                        .WithMany("Products")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Categories");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductColoursEntity", b =>
                 {
                     b.HasOne("Ecommerceproject.Models.Entities.ColourEntity", "Colour")
@@ -592,6 +559,10 @@ namespace Ecommerceproject.Migrations
                     b.HasOne("Ecommerceproject.Models.Entities.OrderStatusEntity", null)
                         .WithMany("Products")
                         .HasForeignKey("OrderStatusEntityId");
+
+                    b.HasOne("Ecommerceproject.Models.Entities.ProductCategoryEntity", null)
+                        .WithMany("Products")
+                        .HasForeignKey("ProductCategoryEntityId");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserEntity", b =>
@@ -674,11 +645,6 @@ namespace Ecommerceproject.Migrations
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("Ecommerceproject.Models.Entities.CategoriesEntity", b =>
-                {
-                    b.Navigation("ProductCategories");
-                });
-
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ColourEntity", b =>
                 {
                     b.Navigation("Products");
@@ -694,11 +660,14 @@ namespace Ecommerceproject.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductCategoryEntity", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductEntity", b =>
                 {
                     b.Navigation("Colours");
-
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserEntity", b =>

@@ -1,7 +1,11 @@
-﻿namespace Ecommerceproject.Models.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Ecommerceproject.Models.Entities;
 
 public class ProductColoursEntity
 {
+    [Key]
+    public int Id { get; set; }
     public int ProductId { get; set; }
     public ProductEntity Product { get; set; } = null!;
 

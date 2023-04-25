@@ -11,5 +11,5 @@ public class OrderStatusEntity
     [StringLength(20)]
     public string Status { get; set; } = string.Empty;
 
-    public ICollection<ProductEntity> Products { get; set; } = null!;
+    public ICollection<ProductEntity> Products { get; set; } = new List<ProductEntity>();
 }

@@ -19,8 +19,7 @@ public class ProductEntity
     [Required]
     public string ProductDescription { get; set; } = null!;
 
-    [Required]
-    public string ProductCategory { get; set; } = null!;
+    public ICollection<ProductCategoryEntity> Categories { get; set; } = new List<ProductCategoryEntity>();
 
     [Required]
     public int ProductInStock { get; set; }

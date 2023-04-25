@@ -1,4 +1,5 @@
 ﻿using Ecommerceproject.Context;
+using Ecommerceproject.Models;
 using Ecommerceproject.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,5 +24,11 @@ public class AdminController : Controller
         
         return View();
     }
-    
+
+    [HttpPost]
+    public IActionResult AddProduct(ProductModel model)
+    {
+
+        return View();
+    }
 }

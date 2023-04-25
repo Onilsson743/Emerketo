@@ -9,15 +9,17 @@
 
 <div class="AddProductForm container">
     <h5 style="color: #636363; margin-top: 100px;">Add a new product.</h5>
-    <form action="" class="form mt-4">
+    <form method="post" class="form mt-4">
         <span class="split-input">
             <span>
                 <label asp-for="ProductName"></label>
                 <input asp-for="ProductName" type="text">
+                <small class="text-danger"><span asp-validation-for="ProductName"></span></small>
             </span>
             <span>
                 <label asp-for="Price"></label>
                 <input asp-for="Price" type="number">
+                <small class="text-danger"><span asp-validation-for="Price"></span></small>
             </span>
         </span>
 
@@ -25,27 +27,35 @@
             <span>
                 <label asp-for="ProductCategory"></label>
                 <input asp-for="ProductCategory" type="text">
+                <small class="text-danger"><span asp-validation-for="ProductCategory"></span></small>
             </span>
             <span>
                 <label asp-for="ProductImageUrl"></label>
                 <input asp-for="ProductImageUrl" type="text">
+                <small class="text-danger"><span asp-validation-for="ProductImageUrl"></span></small>
             </span>
         </span>
-        <label for="productDescription" style="margin-bottom: -20px;">Product Description</label>
-        <textarea name="productDescription" id="" cols="20" rows="5"></textarea>
+
+        <label asp-for="ProductInStock" style="margin-bottom: -20px;"></label>
+        <input asp-for="ProductInStock" type="number" />
+        <small class="text-danger"><span asp-validation-for="ProductInStock"></span></small>
+
+        <label asp-for="ProductDescription" style="margin-bottom: -20px;"></label>
+        <textarea asp-for="ProductDescription" cols="20" rows="5"></textarea>
+        <small class="text-danger"><span asp-validation-for="ProductDescription"></span></small>
 
         
         <div>
-            <h6><strong>Select all the available colours</strong></h6>
+            <p>Please select all the available colours</p>
             @foreach (string colour in product.Colours)
             {
-                <label asp-for="@colour">@colour</label>
-                <input asp-for="@colour" type="checkbox" id="@colour" value="@colour" />
+                <label for="@colour">@colour</label>
+                <input name="@colour" type="checkbox" id="@colour" value="@colour" />
             }
         </div>
        
 
-        <button class="btn-theme">Add Product</button>
+        <button type="submit" class="btn-theme">Add Product</button>
     </form>
 </div>
 
