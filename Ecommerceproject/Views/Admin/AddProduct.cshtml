@@ -50,11 +50,14 @@
             @foreach (string colour in product.Colours)
             {
                 <label for="@colour">@colour</label>
-                <input name="@colour" type="checkbox" id="@colour" value="@colour" />
+                <button 
+                onclick="@{
+                        Model.Colours.Add(colour);
+                    }">
+                </button>
             }
         </div>
-       
-
+        
         <button type="submit" class="btn-theme">Add Product</button>
     </form>
 </div>

@@ -1,5 +1,7 @@
 using Ecommerceproject.Context;
 using Ecommerceproject.Services;
+using Ecommerceproject.Services.DatabaseServices;
+using Ecommerceproject.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Sql")));
-builder.Services.AddScoped<DataServices>();
+
+//builder.Services.AddScoped<DataServices>();
+//builder.Services.AddScoped<ProductCategoryDbServices>();
+
+builder.Services.AddScoped<ProductDbRepo>();
+builder.Services.AddScoped<ProductDbServices>();
 
 
 

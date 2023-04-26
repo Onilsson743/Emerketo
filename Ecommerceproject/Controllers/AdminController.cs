@@ -1,18 +1,17 @@
-﻿using Ecommerceproject.Context;
-using Ecommerceproject.Models;
-using Ecommerceproject.Services;
+﻿using Ecommerceproject.Models.ViewModels;
+using Ecommerceproject.Services.DatabaseServices;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Ecommerceproject.Controllers;
 
 public class AdminController : Controller
 {
-    private readonly DataServices _data;
-   
+    private readonly ProductDbServices _productService;
 
-    public AdminController(DataServices data)
+    public AdminController(ProductDbServices productService)
     {
-        _data = data;
+        _productService = productService;
     }
 
     public IActionResult Index()
@@ -26,9 +25,10 @@ public class AdminController : Controller
     }
 
     [HttpPost]
-    public IActionResult AddProduct(ProductModel model)
+    public async Task<IActionResult> AddProduct(AddProductViewModel model)
     {
-
+        
+        await _productService.AddAsync(model);
         return View();
     }
 }

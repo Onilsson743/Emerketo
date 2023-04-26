@@ -9,5 +9,5 @@ public class ColourEntity
     [Required]
     [StringLength(20)]
     public string Colour { get; set; } = string.Empty;
-    public ICollection<ProductColoursEntity> Products { get; set; } = new List<ProductColoursEntity>();
+    public List<ProductColoursEntity> Products { get; set; } = new List<ProductColoursEntity>();
 }

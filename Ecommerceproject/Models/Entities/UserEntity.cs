@@ -18,7 +18,7 @@ public class UserEntity
     public string LastName { get; set; } = null!;
     public int? AdressId { get; set; }
     public AdressEntity Adress { get; set; } = null!;
-    public ICollection<OrderEntity> Orders { get; set; } = new List<OrderEntity>();
+    public List<OrderEntity> Orders { get; set; } = new List<OrderEntity>();
 
     public IdentityUser User { get; set; } = null!;
 

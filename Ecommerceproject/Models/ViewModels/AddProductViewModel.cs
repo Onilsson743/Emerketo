@@ -28,7 +28,6 @@ public class AddProductViewModel
     [Display(Name = "Image URL*")]
     [Required(ErrorMessage = "An image URL is required")]
     public string ProductImageUrl { get; set; } = null!;
-
     
     public List<string> Colours { get; set; } = new List<string>();
 
