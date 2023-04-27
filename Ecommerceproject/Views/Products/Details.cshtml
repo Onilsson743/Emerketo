@@ -1,9 +1,20 @@
-﻿<!-- Product overview -->
+﻿@model ProductModel
+
+@{
+    HeaderWithInfoModel header = new HeaderWithInfoModel()
+    {
+        Title = "SHOP",
+        ImageUrl = "https://cdn.pixabay.com/photo/2018/03/10/09/49/city-3213676_1280.jpg"
+    };
+}
+
+<partial name="/Views/PartialViews/Components/_HeaderWithInfo.cshtml" model="@header" />
+<!-- Product overview -->
 <div class="container product-overview ">
     <!-- Images -->
     <div class="images">
         <!-- Maing image -->
-        <img class="main-image" src="" alt="">
+        <img class="main-image" src="@Model.ProductImageUrl" alt="">
 
         <!-- Lower images -->
         <span class="lower-images">
@@ -16,26 +27,26 @@
 
     <!-- Details -->
     <div class="details">
-        <h1>Young Star Smart Shoe in Fashion</h1>
-        <p class="details-text">Lirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <h1>@Model.ProductName</h1>
+        <p class="details-text">@Model.ProductDescription</p>
 
         <hr>
         <span class="rating">
             <div class="star-background">
                 <div class="fill-rating" style="width: 75%;"></div>
-                <img src="./images/Stars.svg" alt="">
+                <img src="/Images/Stars.svg" alt="">
             </div>
             <p>16 reviews</p>
         </span>
 
-        <h1>$30</h1>
+        <h1>$ @Model.Price</h1>
 
         <span class="ammount">
             <span class="adjust-quantity">
                 <button>-</button>
-                <span>
-                    <h5>2</h5>
-                </span>
+                
+                <h5>2</h5>
+                
                 <button>+</button>
             </span>
             <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>

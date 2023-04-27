@@ -10,22 +10,26 @@ public class AdminController : Controller
 {
     private readonly ProductDbServices _productService;
     private readonly ColourDbServices _colourService;
+    private readonly CategoryDbServices _categoryService;
 
-    public AdminController(ProductDbServices productService, ColourDbServices colourService)
+    public AdminController(ProductDbServices productService, ColourDbServices colourService, CategoryDbServices categoryService)
     {
         _productService = productService;
         _colourService = colourService;
+        _categoryService = categoryService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+        IEnumerable<ProductModel> model = await _productService.GetAllAsync();
+        return View(model);
     }
     public async Task<IActionResult> AddProduct()
     {
         var model = new AddProductViewModel()
         {
-            ColoursList = await _colourService.GetAllColours()          
+            ColoursList = await _colourService.GetAllColours(),
+            ProductCategory = await _categoryService.GetAllCategories()
         };
         return View(model);
     }
@@ -36,6 +40,7 @@ public class AdminController : Controller
         if (ModelState.IsValid)
         {
             await _productService.AddAsync(model);
+            return RedirectToAction("Index");
         }
 
         return View(model);

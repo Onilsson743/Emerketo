@@ -5,13 +5,16 @@ namespace Ecommerceproject.Services.DatabaseServices;
 
 public class ColourDbServices
 {
+    #region
     private readonly ColourDbRepo _colourService;
 
     public ColourDbServices(ColourDbRepo colourService)
     {
         _colourService = colourService;
     }
+    #endregion
 
+    //Gets all available colours
     public async Task<List<CheckBox>> GetAllColours()
     {
         var result = await _colourService.GetAllAsync();

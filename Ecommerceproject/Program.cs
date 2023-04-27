@@ -18,6 +18,8 @@ builder.Services.AddScoped<ProductDbRepo>();
 builder.Services.AddScoped<ProductDbServices>();
 builder.Services.AddScoped<ColourDbRepo>();
 builder.Services.AddScoped<ColourDbServices>();
+builder.Services.AddScoped<CategoryDbRepo>();
+builder.Services.AddScoped<CategoryDbServices>();
 
 
 

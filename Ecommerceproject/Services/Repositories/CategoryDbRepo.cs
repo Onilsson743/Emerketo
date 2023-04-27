@@ -3,9 +3,9 @@ using Ecommerceproject.Models.Entities;
 
 namespace Ecommerceproject.Services.Repositories
 {
-    public class CategoryRepo : MainRepo<CategoriesEntity>
+    public class CategoryDbRepo : MainRepo<CategoriesEntity>
     {
-        public CategoryRepo(DataContext db) : base(db)
+        public CategoryDbRepo(DataContext db) : base(db)
         {
         }
     }

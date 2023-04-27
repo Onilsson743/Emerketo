@@ -17,18 +17,9 @@
             </span>
         </span>
 
-        <span class="split-input">
-            <span>
-                <label asp-for="ProductCategory"></label>
-                <input asp-for="ProductCategory" type="text">
-                <small class="text-danger"><span asp-validation-for="ProductCategory"></span></small>
-            </span>
-            <span>
-                <label asp-for="ProductImageUrl"></label>
-                <input asp-for="ProductImageUrl" type="text">
-                <small class="text-danger"><span asp-validation-for="ProductImageUrl"></span></small>
-            </span>
-        </span>
+        <label asp-for="ProductImageUrl"></label>
+        <input asp-for="ProductImageUrl" type="text">
+        <small class="text-danger"><span asp-validation-for="ProductImageUrl"></span></small>
 
         <label asp-for="ProductInStock" style="margin-bottom: -20px;"></label>
         <input asp-for="ProductInStock" type="number" />
@@ -38,15 +29,25 @@
         <textarea asp-for="ProductDescription" cols="20" rows="5"></textarea>
         <small class="text-danger"><span asp-validation-for="ProductDescription"></span></small>
 
-        
+        @*Displays all the categories in the database*@
+        <div>
+            <p>Please select the categories for this product</p>
+            @for (var i = 0; i < Model.ProductCategory.Count; i++)
+            {
+                <label asp-for="ProductCategory[i]">@Model.ProductCategory[i].Name</label>
+                <input asp-for="@Model.ProductCategory[i].IsChecked" type="checkbox" />
+                <input asp-for="@Model.ProductCategory[i].Name" type="hidden" />
+            }
+        </div>
+
+        @*Displays all the colours in the database*@
         <div>
             <p>Please select all the available colours</p>
             @for (var i = 0; i < Model.ColoursList.Count; i++)
             {
-                <label asp-for="Colours[i]">@Model.ColoursList[i].Name</label>
+                <label asp-for="ColoursList[i]">@Model.ColoursList[i].Name</label>
                 <input asp-for="@Model.ColoursList[i].IsChecked" type="checkbox" />
                 <input asp-for="@Model.ColoursList[i].Name" type="hidden" />
-                
             }
         </div>
         

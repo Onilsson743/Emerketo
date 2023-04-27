@@ -46,6 +46,10 @@ a:hover {
 .card:hover {
   scale: 1.05;
 }
+.card img {
+  max-height: 220px;
+  object-fit: cover;
+}
 .card .card-body span {
   display: flex;
   justify-content: space-between;
@@ -506,6 +510,7 @@ a:hover {
 .product-overview {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 100px;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -519,7 +524,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
 }
 @media (min-width: 992px) {
   .product-overview .images {
@@ -528,7 +532,7 @@ a:hover {
 }
 @media (min-width: 1200px) {
   .product-overview .images {
-    width: 100%;
+    width: 500px;
   }
 }
 .product-overview .images .main-image {
@@ -557,6 +561,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-grow: 1;
 }
 .product-overview .details h1 {
   font-size: 24px;
