@@ -1,10 +1,4 @@
-﻿@{
-    ProductModel product = new ProductModel();
-    product.Colours.Add("Blue");
-    product.Colours.Add("Black");
-    product.Colours.Add("Red");
-    product.Colours.Add("Green");
-}
+﻿
 @model AddProductViewModel
 
 <div class="AddProductForm container">
@@ -47,14 +41,12 @@
         
         <div>
             <p>Please select all the available colours</p>
-            @foreach (string colour in product.Colours)
+            @for (var i = 0; i < Model.ColoursList.Count; i++)
             {
-                <label for="@colour">@colour</label>
-                <button 
-                onclick="@{
-                        Model.Colours.Add(colour);
-                    }">
-                </button>
+                <label asp-for="Colours[i]">@Model.ColoursList[i].Name</label>
+                <input asp-for="@Model.ColoursList[i].IsChecked" type="checkbox" />
+                <input asp-for="@Model.ColoursList[i].Name" type="hidden" />
+                
             }
         </div>
         

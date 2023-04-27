@@ -1,8 +1,8 @@
 ﻿using Ecommerceproject.Context;
 using Ecommerceproject.Models;
 using Ecommerceproject.Models.Entities;
-using Ecommerceproject.Models.ViewModels;
 using Ecommerceproject.Services.Repositories;
+using Ecommerceproject.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerceproject.Services.DatabaseServices
@@ -51,22 +51,25 @@ namespace Ecommerceproject.Services.DatabaseServices
 
                 productEntity.Categories.Add(productCategoryEntity);
             }
-            foreach (string colour in product.Colours)
+            foreach (var colour in product.ColoursList)
             {
-                var colourEntity = await _db.Colours.SingleOrDefaultAsync(c => c.Colour == colour);
-                if (colourEntity == null)
+                if (colour.IsChecked == true)
                 {
-                    colourEntity = new ColourEntity { Colour = colour };
-                    _db.Colours.Add(colourEntity);
+                    var colourEntity = await _db.Colours.SingleOrDefaultAsync(c => c.Colour.ToLower() == colour.Name.ToLower());
+                    if (colourEntity == null)
+                    {
+                        colourEntity = new ColourEntity { Colour = colour.Name };
+                        _db.Colours.Add(colourEntity);
+                    }
+
+                    var productColourEntity = new ProductColoursEntity
+                    {
+                        Product = productEntity,
+                        Colour = colourEntity
+                    };
+
+                    productEntity.Colours.Add(productColourEntity);
                 }
-
-                var productColourEntity = new ProductColoursEntity
-                {
-                    Product = productEntity,
-                    Colour = colourEntity
-                };
-
-                productEntity.Colours.Add(productColourEntity);
             }
 
             await _productService.AddAsync(productEntity);

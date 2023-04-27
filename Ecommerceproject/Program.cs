@@ -16,6 +16,8 @@ builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configura
 
 builder.Services.AddScoped<ProductDbRepo>();
 builder.Services.AddScoped<ProductDbServices>();
+builder.Services.AddScoped<ColourDbRepo>();
+builder.Services.AddScoped<ColourDbServices>();
 
 
 
