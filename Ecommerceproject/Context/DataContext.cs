@@ -12,8 +12,9 @@ public class DataContext : IdentityDbContext
     }
 
     public DbSet<AdressEntity> Adresses { get; set; }
-    public DbSet<ColourEntity> Colours { get; set; }
     public DbSet<CategoriesEntity> Categories { get; set; }
+    public DbSet<ColourEntity> Colours { get; set; }
+    public DbSet<ContactformEntity> ContactForms { get; set; }
     public DbSet<OrderEntity> Orders { get; set; }
     public DbSet<OrderItemsEntity> OrderItems { get; set; }
     public DbSet<OrderStatusEntity> OrderStatuses { get; set; }

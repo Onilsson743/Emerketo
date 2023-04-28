@@ -11,15 +11,17 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Sql")));
 
-//builder.Services.AddScoped<DataServices>();
-//builder.Services.AddScoped<ProductCategoryDbServices>();
-
 builder.Services.AddScoped<ProductDbRepo>();
 builder.Services.AddScoped<ProductDbServices>();
+
 builder.Services.AddScoped<ColourDbRepo>();
 builder.Services.AddScoped<ColourDbServices>();
+
 builder.Services.AddScoped<CategoryDbRepo>();
 builder.Services.AddScoped<CategoryDbServices>();
+
+builder.Services.AddScoped<ContactFormDbRepo>();
+builder.Services.AddScoped<ContactFormDbServices>();
 
 
 

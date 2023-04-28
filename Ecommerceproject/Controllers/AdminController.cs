@@ -8,6 +8,7 @@ namespace Ecommerceproject.Controllers;
 
 public class AdminController : Controller
 {
+    #region
     private readonly ProductDbServices _productService;
     private readonly ColourDbServices _colourService;
     private readonly CategoryDbServices _categoryService;
@@ -18,7 +19,7 @@ public class AdminController : Controller
         _colourService = colourService;
         _categoryService = categoryService;
     }
-
+    #endregion
     public async Task<IActionResult> Index()
     {
         IEnumerable<ProductModel> model = await _productService.GetAllAsync();

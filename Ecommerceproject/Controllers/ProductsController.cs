@@ -8,7 +8,6 @@ namespace Ecommerceproject.Controllers
     public class ProductsController : Controller
     {
         private readonly ProductDbServices _productService;
-
         public ProductsController(ProductDbServices productService)
         {
             _productService = productService;
@@ -20,6 +19,8 @@ namespace Ecommerceproject.Controllers
             return View();
         }
 
+
+        //Redirects to the details page of the selected product
         [HttpGet]
         public async Task<IActionResult> Details() 
         {
