@@ -31,7 +31,8 @@ public class ContactUsFormViewModel
         ContactformEntity formEntity = new ContactformEntity
         {
             FullName = form.Name,
-            Email = form.Email
+            Email = form.Email,
+            Message = form.Message,
         };
         if (form.PhoneNumber != null)
         {

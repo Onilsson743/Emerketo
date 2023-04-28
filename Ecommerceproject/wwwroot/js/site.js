@@ -1,4 +1,5 @@
-﻿function expand() {
+﻿//Shows and hides the serchbar.
+function expand() {
     if (document.getElementById("navbar-search").className.includes("search-expanded")) {
         document.getElementById("navbar-search").classList.remove("search-expanded");
     }
@@ -25,7 +26,13 @@ function SetBreadcrumb() {
     }
     document.getElementById("breadcrumb").innerHTML = currentPage
 }
+/*SetBreadcrumb()*/
 
-SetBreadcrumb()
 
+//Sets the colour on the active page in the navbar.
+function SetActivePageColour() {
+    const query = window.location.href.split("/")
+    console.log(query)
+}
+SetActivePageColour()
 
