@@ -24,15 +24,20 @@ function SetBreadcrumb() {
     for (var i = 0; i < list.length; i++) {
         currentPage = currentPage + " " + list[i]
     }
-    document.getElementById("breadcrumb").innerHTML = currentPage
+    try {
+        document.getElementById("breadcrumb").innerHTML = currentPage
+    } catch { }  
 }
-/*SetBreadcrumb()*/
+SetBreadcrumb()
 
 
-//Sets the colour on the active page in the navbar.
+//Function to set the active page on the navbar
 function SetActivePageColour() {
     const query = window.location.href.split("/")
+    try {
+        document.getElementById(query[3]).classList.add("active")
+    }
     console.log(query)
 }
-SetActivePageColour()
+/*SetActivePageColour()*/
 

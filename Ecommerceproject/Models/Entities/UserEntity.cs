@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerceproject.Models.Entities;
 
-public class UserEntity
+public class UserEntity : IdentityUser
 {
-    [Key, ForeignKey(nameof(User))]
-    public string PersonId { get; set; } = null!;
+    //[Key, ForeignKey(nameof(User))]
+    //[Key]
+    //public int AccountId { get; set; }
     [Required]
     [StringLength(50)]
     public string FirstName { get; set; } = null!;
@@ -16,10 +17,9 @@ public class UserEntity
     [Required]
     [StringLength(50)]
     public string LastName { get; set; } = null!;
-    public int? AdressId { get; set; }
-    public AdressEntity Adress { get; set; } = null!;
-    public List<OrderEntity> Orders { get; set; } = new List<OrderEntity>();
+    public ICollection<UserAddressEntity> Address { get; set; } = new List<UserAddressEntity>();
+    public ICollection<OrderEntity> Orders { get; set; } = new List<OrderEntity>();
 
-    public IdentityUser User { get; set; } = null!;
+    //public IdentityUser User { get; set; } = null!;
 
 }

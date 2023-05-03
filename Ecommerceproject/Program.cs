@@ -1,7 +1,10 @@
 using Ecommerceproject.Context;
+using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services;
 using Ecommerceproject.Services.DatabaseServices;
+using Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 using Ecommerceproject.Services.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +25,27 @@ builder.Services.AddScoped<CategoryDbServices>();
 
 builder.Services.AddScoped<ContactFormDbRepo>();
 builder.Services.AddScoped<ContactFormDbServices>();
+
+builder.Services.AddScoped<AddressDbRepo>();
+builder.Services.AddScoped<UserAddressDbRepo>();
+builder.Services.AddScoped<AddressDbServices>();
+
+builder.Services.AddScoped<AuthenticationDbService>();
+builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
+{
+    x.SignIn.RequireConfirmedAccount = false;
+    x.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<DataContext>();
+
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.LoginPath = "/login";
+    x.LogoutPath = "/";
+    x.AccessDeniedPath = "/denied";
+});
+
+
+
 
 
 

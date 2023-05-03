@@ -19,10 +19,10 @@ public class ProductEntity
     [Required]
     public string ProductDescription { get; set; } = null!;
 
-    public List<ProductCategoryEntity> Categories { get; set; } = new List<ProductCategoryEntity>();
+    public ICollection<ProductCategoryEntity> Categories { get; set; } = new List<ProductCategoryEntity>();
 
     [Required]
     public int ProductInStock { get; set; }
     public string ProductImageUrl { get; set; } = null!;
-    public List<ProductColoursEntity> Colours { get; set; } = new List<ProductColoursEntity>();
+    public ICollection<ProductColoursEntity> Colours { get; set; } = new List<ProductColoursEntity>();
 }

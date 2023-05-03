@@ -5,13 +5,13 @@ using System.Drawing;
 
 namespace Ecommerceproject.Context;
 
-public class DataContext : IdentityDbContext
+public class DataContext : IdentityDbContext<UserEntity>
 {
     public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
     }
 
-    public DbSet<AdressEntity> Adresses { get; set; }
+    public DbSet<AddressEntity> Adresses { get; set; }
     public DbSet<CategoriesEntity> Categories { get; set; }
     public DbSet<ColourEntity> Colours { get; set; }
     public DbSet<ContactformEntity> ContactForms { get; set; }
@@ -21,5 +21,6 @@ public class DataContext : IdentityDbContext
     public DbSet<ProductCategoryEntity> ProductCategories { get; set; }
     public DbSet<ProductColoursEntity> ProductColours { get; set; }
     public DbSet<ProductEntity> Products { get; set; }    
-    public DbSet<UserEntity> Users { get; set; }
+    public DbSet<UserAddressEntity> UserAdresses { get; set; }
+  
 }

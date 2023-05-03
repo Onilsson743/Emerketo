@@ -35,6 +35,28 @@ public abstract class MainRepo<TEntity> where TEntity : class
         await _db.SaveChangesAsync();
         return entity;
     }
+
+    //Updates an object in the database
+    public virtual async Task<TEntity> UpdateAsync(TEntity entity)
+    {
+        _db.Set<TEntity>().Update(entity);
+        await _db.SaveChangesAsync();
+        return entity;
+    }
+
+    //Removes an object from the database
+    public virtual async Task<bool> RemoveAsync(TEntity entity)
+    {
+        try
+        {
+            _db.Set<TEntity>().Remove(entity);
+            await _db.SaveChangesAsync();
+            return true;
+        } catch{ };
+        return false;
+
+
+    }
 }
 
 

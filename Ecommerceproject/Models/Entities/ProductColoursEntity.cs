@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerceproject.Models.Entities;
 
+[PrimaryKey(nameof(ProductId), nameof(ColourId))]
 public class ProductColoursEntity
 {
-    [Key]
-    public int Id { get; set; }
     public int ProductId { get; set; }
     public ProductEntity Product { get; set; } = null!;
 

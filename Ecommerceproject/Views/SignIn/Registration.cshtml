@@ -1,8 +1,15 @@
 ﻿@model RegistrationViewModel
 
+@{
+    ViewData["Title"] = "Register";
+}
+
 <div class="container mt-4" >
     <h5>Please Register Your new Account</h5>
-    <form method="post" class="form">
+    <form method="post" class="form" enctype="multipart/form-data">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
         <span class="split-input">
             <span>
                 <label asp-for="FirstName"></label>
@@ -56,8 +63,8 @@
         <input asp-for="ConfirmPassword" type="text">
         <small class="text-danger"><span asp-validation-for="ConfirmPassword"></span></small>
 
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" type="text">
+        <label asp-for="ImageFile"></label>
+        <input asp-for="ImageFile" type="file">
 
         <span>
             <input asp-for="TermsAndAgreements" type="checkbox" />

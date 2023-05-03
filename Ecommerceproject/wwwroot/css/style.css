@@ -542,6 +542,7 @@ a:hover {
 @media (min-width: 1200px) {
   .product-overview .images .main-image {
     height: 430px;
+    width: 500px;
   }
 }
 .product-overview .images .lower-images {

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Ecommerceproject.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerceproject.ViewModels;
 
@@ -28,10 +29,11 @@ public class RegistrationViewModel
     public string PhoneNumber { get; set; } = null!;
 
     [Display(Name = "Company (Optional)")]
-    public string Company { get; set; } = null!;
+    public string Company { get; set; }
 
     [Display(Name = "E-mail*")]
     [Required(ErrorMessage = "Please fill in your email adress")]
+    [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Please provide an valid email adress.")]
     public string Email { get; set; } = null!;
 
 
@@ -48,7 +50,30 @@ public class RegistrationViewModel
 
 
     [Display(Name = "I have read and accepts the terms and agreements")]
+    [Required(ErrorMessage = "You must aggree the terms and agreements")]
     public bool TermsAndAgreements { get; set; } = false;
 
+
+    public static implicit operator UserEntity(RegistrationViewModel model)
+    {
+        return new UserEntity
+        {
+            UserName = model.Email,
+            FirstName = model.FirstName,
+            LastName = model.LastName,
+            Email = model.Email,
+            PhoneNumber = model.PhoneNumber,
+        };
+    }
+
+    public static implicit operator AddressEntity(RegistrationViewModel model)
+    {
+        return new AddressEntity
+        {
+            StreetName = model.StreetName,
+            PostalCode = model.PostalCode,
+            City = model.City,
+        };
+    }
 
 }

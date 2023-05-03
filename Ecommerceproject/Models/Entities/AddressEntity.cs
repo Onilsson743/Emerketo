@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerceproject.Models.Entities;
 
-public class AdressEntity
+public class AddressEntity
 {
     public int Id { get; set; }
 
@@ -24,6 +24,6 @@ public class AdressEntity
     [StringLength(100)]
     public string City { get; set; } = string.Empty;
 
-    public List<UserEntity> Users { get; set; } = null!;
-    public List<OrderEntity> Orders { get; set; } = null!;
+    public ICollection<UserAddressEntity> Users { get; set; } = new List<UserAddressEntity>();
+    public ICollection<OrderEntity> Orders { get; set; } = new List<OrderEntity>();
 }
