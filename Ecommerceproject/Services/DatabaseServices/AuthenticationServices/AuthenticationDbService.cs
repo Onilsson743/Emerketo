@@ -38,15 +38,6 @@ public class AuthenticationDbService
     public async Task<bool> RegisterAsync(RegistrationViewModel model)
     {
         UserEntity user = model;
-        //UserEntity user = new UserEntity
-        //{
-        //    UserName = model.Email,
-        //    FirstName = model.FirstName,
-        //    LastName = model.LastName,
-        //    Email = model.Email,
-        //    PhoneNumber = model.PhoneNumber,
-        //    Adress
-        //};
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {

@@ -26,10 +26,10 @@ public class RegistrationViewModel
     public string City { get; set; } = null!;
 
     [Display(Name = "Mobile (Optional)")]
-    public string PhoneNumber { get; set; } = null!;
+    public string? PhoneNumber { get; set; } = null!;
 
     [Display(Name = "Company (Optional)")]
-    public string Company { get; set; }
+    public string? Company { get; set; }
 
     [Display(Name = "E-mail*")]
     [Required(ErrorMessage = "Please fill in your email adress")]
