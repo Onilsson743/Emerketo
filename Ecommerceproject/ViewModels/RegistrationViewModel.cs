@@ -37,12 +37,15 @@ public class RegistrationViewModel
     public string Email { get; set; } = null!;
 
 
-    [Display(Name = "Password*")]
+    [Display(Name = "Passwords*")]
     [Required(ErrorMessage = "Please fill in a password")]
+    [DataType(DataType.Password)]
     public string Password { get; set; } = null!;
 
     [Display(Name = "Confirm Password*")]
     [Required(ErrorMessage = "Please confirm the password")]
+    [DataType(DataType.Password)]
+    [Compare("Password", ErrorMessage = "The confirmation password do not match the original password.")]
     public string ConfirmPassword { get; set; } = null!;
 
     [Display(Name = "Upload Profile Image (Optional)")]

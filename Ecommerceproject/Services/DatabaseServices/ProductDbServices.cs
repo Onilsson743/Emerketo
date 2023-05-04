@@ -73,6 +73,7 @@ namespace Ecommerceproject.Services.DatabaseServices
                     productEntity.Colours.Add(productColourEntity);
                 }
             }
+           
 
             await _productService.AddAsync(productEntity);
         }

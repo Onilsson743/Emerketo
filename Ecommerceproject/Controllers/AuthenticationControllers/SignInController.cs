@@ -1,9 +1,11 @@
-﻿using Ecommerceproject.Services;
+﻿using Ecommerceproject.Models.Entities;
+using Ecommerceproject.Services;
 using Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 using Ecommerceproject.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Ecommerceproject.Controllers;
+namespace Ecommerceproject.Controllers.AuthenticationControllers;
 
 public class SignInController : Controller
 {
@@ -20,7 +22,7 @@ public class SignInController : Controller
     #region
     public IActionResult Index()
     {
-        
+
         return View();
     }
     [HttpPost]
@@ -55,10 +57,12 @@ public class SignInController : Controller
             if (await _authServices.RegisterAsync(model))
             {
                 return RedirectToAction("Index");
-            }                
+            }
         }
         return View(model);
     }
     #endregion
+
+
 
 }

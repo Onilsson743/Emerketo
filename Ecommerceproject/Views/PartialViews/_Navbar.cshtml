@@ -1,6 +1,4 @@
 ﻿
-@{
-}
 <!-- Navbar -->
 <header class="container">
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -20,7 +18,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Admin" asp-action="Index">PRODUCTS</a>
+                        <a class="nav-link" asp-controller="Admin" asp-action="Index">ADMIN</a>
                     </li>
                     <li class="nav-item" >
                         <a class="nav-link" asp-controller="Contact" asp-action="Index">CONTACT</a>
@@ -35,7 +33,16 @@
                         </form>                        
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="SignIn" asp-action="Index">LOGIN</a>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <a class="nav-link" asp-controller="Account" asp-action="Index">@User.FindFirst("DisplayName")?.Value @User.Identity.Name</a>
+                            <a class="nav-link" asp-controller="SignOut" asp-action="Index">LOGOUT</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" asp-controller="SignIn" asp-action="Index">LOGIN</a>
+                        }
+                        
                     </li>
                     <li>
                         <a href="">

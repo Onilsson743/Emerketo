@@ -4,6 +4,7 @@ using Ecommerceproject.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerceproject.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230504111014_rolesadded")]
+    partial class rolesadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -429,21 +432,9 @@ namespace Ecommerceproject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a368ac98-666b-4062-bbad-b52a1ee78930",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "c76c15fd-ae37-4d2b-b6cd-0c631fd0f08b",
-                            Name = "Manager",
-                            NormalizedName = "MANAGER"
-                        },
-                        new
-                        {
-                            Id = "ce7631be-7988-45d4-9d2a-22112859ba96",
-                            Name = "Member",
-                            NormalizedName = "MEMBER"
+                            Id = "ecda2c9f-13cd-4e8f-bdbb-76107775dd61",
+                            Name = "System Administrator",
+                            NormalizedName = "SYSTEMADMINISTRATOR"
                         });
                 });
 

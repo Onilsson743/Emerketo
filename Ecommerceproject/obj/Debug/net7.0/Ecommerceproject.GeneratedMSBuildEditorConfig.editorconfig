@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Oscar\OneDrive\Skrivbord\win22\ASP.NET\Ecommerceproject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/Admin/AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/Denied/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVuaWVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/Home/Index.cshtml]

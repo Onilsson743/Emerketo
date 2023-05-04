@@ -1,4 +1,5 @@
 ﻿using Ecommerceproject.Models.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
@@ -22,5 +23,34 @@ public class DataContext : IdentityDbContext<UserEntity>
     public DbSet<ProductColoursEntity> ProductColours { get; set; }
     public DbSet<ProductEntity> Products { get; set; }    
     public DbSet<UserAddressEntity> UserAdresses { get; set; }
-  
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<IdentityRole>().HasData(new IdentityRole
+        {
+            Name = "Admin",
+            NormalizedName = "ADMIN",
+        },
+        new IdentityRole
+        {
+            Name = "Manager",
+            NormalizedName = "MANAGER"
+        },
+        new IdentityRole
+        {
+            Name = "Member",
+            NormalizedName = "MEMBER"
+        });
+        // var passwordHasher = new PasswordHasher<UserEntity>();
+        //builder.Entity<UserEntity>().HasData(new UserEntity
+        //{
+        //    FirstName = "System",
+        //    LastName = "Administrator",
+        //    UserName = "administrator",
+        //    PasswordHash = passwordHasher.HashPassword(null!, "BytMig123!"),
+
+        //});
+    }
 }

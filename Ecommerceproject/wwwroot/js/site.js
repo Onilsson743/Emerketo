@@ -5,8 +5,7 @@ function expand() {
     }
     else {
         document.getElementById("navbar-search").classList.add("search-expanded");
-    }
-    
+    }  
 }
 
 //Takes the url parameters and sets the breadcrumb.
@@ -32,12 +31,12 @@ SetBreadcrumb()
 
 
 //Function to set the active page on the navbar
-function SetActivePageColour() {
-    const query = window.location.href.split("/")
-    try {
-        document.getElementById(query[3]).classList.add("active")
-    }
-    console.log(query)
-}
+//function SetActivePageColour() {
+//    const query = window.location.href.split("/")
+//    try {
+//        document.getElementById(query[3]).classList.add("active")
+//    }
+    
+//}
 /*SetActivePageColour()*/
 

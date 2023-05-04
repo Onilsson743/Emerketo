@@ -1,11 +1,13 @@
 ﻿using Ecommerceproject.Models;
 using Ecommerceproject.Services.DatabaseServices;
 using Ecommerceproject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace Ecommerceproject.Controllers;
 
+[Authorize(Roles = "Admin")]
 public class AdminController : Controller
 {
     #region

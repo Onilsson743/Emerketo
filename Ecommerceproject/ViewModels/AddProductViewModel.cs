@@ -28,7 +28,6 @@ namespace Ecommerceproject.ViewModels
         [Required(ErrorMessage = "An image URL is required")]
         public string ProductImageUrl { get; set; } = null!;
 
-        //public List<string> Colours { get; set; } = new List<string>();
         public List<CheckBox> ColoursList { get; set; } = new List<CheckBox>();
 
     }

@@ -13,13 +13,17 @@ public class AuthenticationDbService
     private readonly UserManager<UserEntity> _userManager;
     private readonly SignInManager<UserEntity> _signInService;
     private readonly AddressDbServices _addressService;
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly UserDbServices _userService;
 
 
-    public AuthenticationDbService(UserManager<UserEntity> authService, AddressDbServices addressService, SignInManager<UserEntity> signInService)
+    public AuthenticationDbService(UserManager<UserEntity> authService, AddressDbServices addressService, SignInManager<UserEntity> signInService, RoleManager<IdentityRole> roleManager, UserDbServices userService)
     {
         _userManager = authService;
         _addressService = addressService;
         _signInService = signInService;
+        _roleManager = roleManager;
+        _userService = userService;
     }
 
 
@@ -38,9 +42,29 @@ public class AuthenticationDbService
     public async Task<bool> RegisterAsync(RegistrationViewModel model)
     {
         UserEntity user = model;
+        var anyornull = await _userService.CheckAnyUserAsync();
+        
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
+            if (anyornull == false)
+            {
+                var defaultrole = await _roleManager.FindByNameAsync("Admin");
+                if (defaultrole != null)
+                {
+                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+                }
+            }
+            else
+            {
+                var defaultrole = await _roleManager.FindByNameAsync("Member");
+                if (defaultrole != null)
+                {
+                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+                }
+            }
+                
+
             var address = await _addressService.GetOrCreateAsync(model);
             if (address != null)
             {
@@ -48,7 +72,6 @@ public class AuthenticationDbService
                 return true;
             }
         }
-
         return false;
     }
 

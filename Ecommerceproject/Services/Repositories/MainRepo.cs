@@ -19,6 +19,10 @@ public abstract class MainRepo<TEntity> where TEntity : class
     {
         return await _db.Set<TEntity>().ToListAsync();
     }
+    public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression)
+    {
+        return await _db.Set<TEntity>().Where(expression).ToListAsync();
+    }
 
 
     //Gets one object from the database 
