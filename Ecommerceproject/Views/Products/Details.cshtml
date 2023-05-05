@@ -32,11 +32,11 @@
 
         <hr>
         <span class="rating">
-            <div class="star-background">
+            <span class="star-background">
                 <div class="fill-rating" style="width: 75%;"></div>
                 <img src="/Images/Stars.svg" alt="">
-            </div>
-            <p>16 reviews</p>
+            </span>
+            <p>17 reviews</p>
         </span>
 
         <h1>$ @Model.Price</h1>
@@ -52,18 +52,17 @@
             <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>
         </span>
 
-        <span class="colours">
-            <div class="color" style="background-color: red;"></div>
-            <div class="color" style="background-color: goldenrod;"></div>
-            <div class="color" style="background-color: rgb(122, 162, 168);"></div>
+        <div class="colours">
+            @foreach (string colour in Model.Colours)
+            {
+                <input type="radio" name="Colours" class="color" style="accent-color: @colour;" />
+            }
             <p>SKU: N/A</p>
-        </span>
+        </div>
 
         <button class="btn-white">ADD to wishlist</button>
 
         <p class="category">Category: Table Lamp, Light</p>
-
-
     </div>
 </div>
 

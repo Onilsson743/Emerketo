@@ -121,7 +121,7 @@ namespace Ecommerceproject.Services.DatabaseServices
         //Gets one product
         public async Task<ProductModel> GetOneAsync(int id)
         {
-            var result = await _productService.GetAsync(x => x.Id == id);
+            var result = await _db.Products.Include(x => x.Categories).ThenInclude(c => c.Categories).Include(x => x.Colours).ThenInclude(c => c.Colour).FirstOrDefaultAsync(x => x.Id == id);
             if (result != null)
             {
                 var categories = new List<string>();
