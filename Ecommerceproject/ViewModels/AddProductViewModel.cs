@@ -18,7 +18,7 @@ namespace Ecommerceproject.ViewModels
         public string ProductDescription { get; set; } = null!;
 
         [Display(Name = "Categories")]
-        public List<CheckBox> ProductCategory { get; set; } = new List<CheckBox>();
+        public List<CheckBoxModel> ProductCategory { get; set; } = new List<CheckBoxModel>();
 
         [Display(Name = "Current amount in stock*")]
         [Required(ErrorMessage = "You must set an amount in stock")]
@@ -28,7 +28,7 @@ namespace Ecommerceproject.ViewModels
         [Required(ErrorMessage = "An image URL is required")]
         public string ProductImageUrl { get; set; } = null!;
 
-        public List<CheckBox> ColoursList { get; set; } = new List<CheckBox>();
+        public List<CheckBoxModel> ColoursList { get; set; } = new List<CheckBoxModel>();
 
     }
 }

@@ -15,15 +15,15 @@ public class ColourDbServices
     #endregion
 
     //Gets all available colours
-    public async Task<List<CheckBox>> GetAllColours()
+    public async Task<List<CheckBoxModel>> GetAllColours()
     {
         var result = await _colourService.GetAllAsync();
         if (result != null) 
         {
-            List<CheckBox> colours = new List<CheckBox>();
+            List<CheckBoxModel> colours = new List<CheckBoxModel>();
             foreach (var colour in result)
             {
-                colours.Add(new CheckBox
+                colours.Add(new CheckBoxModel
                 {
                     Name = colour.Colour
                 });

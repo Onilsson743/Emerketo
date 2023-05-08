@@ -22,7 +22,7 @@
         <span class="split-input">
             <span>
                 <label asp-for="Name"></label>
-                <input asp-for="Name" type="text">
+                <input asp-for="Name" type="text" onkeyup="ValidateName()">
                 <small class="text-danger"><span asp-validation-for="Name"></span></small>
             </span>
             <span>

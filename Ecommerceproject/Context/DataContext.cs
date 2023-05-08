@@ -43,14 +43,23 @@ public class DataContext : IdentityDbContext<UserEntity>
             Name = "Member",
             NormalizedName = "MEMBER"
         });
-        // var passwordHasher = new PasswordHasher<UserEntity>();
-        //builder.Entity<UserEntity>().HasData(new UserEntity
-        //{
-        //    FirstName = "System",
-        //    LastName = "Administrator",
-        //    UserName = "administrator",
-        //    PasswordHash = passwordHasher.HashPassword(null!, "BytMig123!"),
 
-        //});
+        builder.Entity<CategoriesEntity>().HasData(
+            new CategoriesEntity
+            {
+                Id = 1,
+                Category = "New",
+            },
+            new CategoriesEntity
+            {
+                Id = 2,
+                Category = "Popular",
+            },
+            new CategoriesEntity
+            {
+                Id = 3,
+                Category = "Featured",
+            }
+            );
     }
 }

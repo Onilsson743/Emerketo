@@ -30,6 +30,16 @@ function SetBreadcrumb() {
 SetBreadcrumb()
 
 
+//Validate section
+
+//Validates Name
+function ValidateName() {
+    var text_value = document.getElementById("Name").value;
+    if (text_value.length < 2) {
+        console.log("Please enter a valid name");
+    }
+}
+
 //Function to set the active page on the navbar
 //function SetActivePageColour() {
 //    const query = window.location.href.split("/")

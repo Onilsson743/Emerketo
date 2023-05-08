@@ -72,7 +72,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
-  gap: 20px;
 }
 .form .split-input {
   display: flex;
@@ -86,12 +85,12 @@ a:hover {
 }
 .form label {
   color: #636363;
+  margin-top: 25px;
 }
 .form input {
   background-color: #FAFAFA;
   padding: 10px;
   border-radius: 2px;
-  margin-bottom: 25px;
   border: none;
 }
 .form input:focus {
@@ -102,7 +101,6 @@ a:hover {
   background-color: #FAFAFA;
   padding: 10px;
   border-radius: 2px;
-  margin-bottom: 25px;
   border: none;
 }
 .form textarea:focus {

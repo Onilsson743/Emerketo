@@ -17,15 +17,15 @@ namespace Ecommerceproject.Services.DatabaseServices
 
 
         //Gets all available categories
-        public async Task<List<CheckBox>> GetAllCategories()
+        public async Task<List<CheckBoxModel>> GetAllCategories()
         {
             var result = await _categoryService.GetAllAsync();
             if (result != null)
             {
-                List<CheckBox> categories = new List<CheckBox>();
+                List<CheckBoxModel> categories = new List<CheckBoxModel>();
                 foreach (var category in result)
                 {
-                    categories.Add(new CheckBox
+                    categories.Add(new CheckBoxModel
                     {
                         Name = category.Category
                     });

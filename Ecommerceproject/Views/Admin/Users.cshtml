@@ -1,0 +1,33 @@
+﻿@model List<UserModel>
+
+<section class="container item-listing">
+    <table class="table table-hover">
+        <thead class="table-head">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var user in Model)
+            {
+                <tr>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>
+                        @user.Role
+                        <select name="cars" id="cars">
+                            <option>Change Role</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>    
