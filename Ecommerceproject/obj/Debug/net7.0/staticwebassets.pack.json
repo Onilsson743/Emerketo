@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\scss\\components\\_navbar.scss"
     },
     {
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_profile.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_profile.scss"
+    },
+    {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_subscribe.scss"
     },

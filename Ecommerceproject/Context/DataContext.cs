@@ -29,20 +29,20 @@ public class DataContext : IdentityDbContext<UserEntity>
         base.OnModelCreating(builder);
 
         builder.Entity<IdentityRole>().HasData(new IdentityRole
-        {
-            Name = "Admin",
-            NormalizedName = "ADMIN",
-        },
-        new IdentityRole
-        {
-            Name = "Manager",
-            NormalizedName = "MANAGER"
-        },
-        new IdentityRole
-        {
-            Name = "Member",
-            NormalizedName = "MEMBER"
-        });
+            {
+                Name = "Admin",
+                NormalizedName = "ADMIN",
+            },
+            new IdentityRole
+            {
+                Name = "Manager",
+                NormalizedName = "MANAGER"
+            },
+            new IdentityRole
+            {
+                Name = "Member",
+                NormalizedName = "MEMBER"
+            });
 
         builder.Entity<CategoriesEntity>().HasData(
             new CategoriesEntity
@@ -59,7 +59,6 @@ public class DataContext : IdentityDbContext<UserEntity>
             {
                 Id = 3,
                 Category = "Featured",
-            }
-            );
+            }            );
     }
 }

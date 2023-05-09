@@ -1,4 +1,5 @@
 ﻿using Ecommerceproject.Models;
+using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services.DatabaseServices;
 using Ecommerceproject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -11,8 +12,8 @@ namespace Ecommerceproject.Controllers;
 [Authorize(Roles = "Admin")]
 public class AdminController : Controller
 {
-    //Dependency injection
-    #region
+    
+    #region constructors
     private readonly ProductDbServices _productService;
     private readonly ColourDbServices _colourService;
     private readonly CategoryDbServices _categoryService;
@@ -61,9 +62,32 @@ public class AdminController : Controller
 
     public async Task<IActionResult> Users()
     {
-        var test = await _userService.GetAllUsersAsync();
+        var users = await _userService.GetAllUsersAsync();
 
-        return View(test);
+        return View(users);
+    }
+
+    
+    public async Task<IActionResult> EditUser(string id)
+    {
+        var user = await _userService.GetOneUserAsync(id);
+        if (user != null)
+        {
+            return View(user);
+        }
+        return RedirectToAction("Users");
+        
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditUser(string id,string role)
+    {
+        var updated = await _userService.UpdateUserRoleAsync(id, role);
+        if (updated != null)
+        {
+            return RedirectToAction("Users");
+        }
+        return View();
     }
 
 }

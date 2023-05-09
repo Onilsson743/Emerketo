@@ -13,7 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Sql")));
+builder.Services.AddDbContext<DataContext>(x =>
+    {
+        x.UseSqlServer(builder.Configuration.GetConnectionString("Sql"));
+        x.EnableSensitiveDataLogging();
+    }
+);
 
 builder.Services.AddScoped<ProductDbRepo>();
 builder.Services.AddScoped<ProductDbServices>();
@@ -34,12 +39,16 @@ builder.Services.AddScoped<AddressDbRepo>();
 builder.Services.AddScoped<UserAddressDbRepo>();
 builder.Services.AddScoped<AddressDbServices>();
 
+
 builder.Services.AddScoped<AuthenticationDbService>();
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 {
     x.SignIn.RequireConfirmedAccount = false;
     x.User.RequireUniqueEmail = true;
-}).AddEntityFrameworkStores<DataContext>().AddRoles<IdentityRole>();
+})
+.AddRoles<IdentityRole>()
+.AddRoleManager<RoleManager<IdentityRole>>()
+.AddEntityFrameworkStores<DataContext>();
 
 builder.Services.ConfigureApplicationCookie(x =>
 {

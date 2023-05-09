@@ -4,7 +4,6 @@ using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace Ecommerceproject.Services.DatabaseServices;
 
@@ -30,6 +29,7 @@ public class UserDbServices
         return false;
     }
 
+    //Gets all the users
     public async Task<IEnumerable<UserModel>> GetAllUsersAsync()
     {
         var userresult = await _userManager.Users.ToListAsync();
@@ -57,5 +57,61 @@ public class UserDbServices
             return users;
         } 
         return null!;
+    }
+
+    //Gets one user
+    public async Task<UserModel> GetOneUserAsync(string id)
+    {
+        var result = await _userRepo.GetAsync(x => x.Id == id);
+        if (result != null)
+        {
+            var roleresult = await _userManager.GetRolesAsync(result);
+            if (roleresult != null)
+            {
+                UserModel user = result;
+                try
+                {
+                    user.Role = roleresult[0]!;
+                }catch { }                
+                return user;
+            }            
+        }
+        return null!;
+    }
+    public async Task<UserModel> GetOneUserAsync(UserModel name)
+    {
+        var result = await _userRepo.GetAsync(x => x.Email == name.Email);
+        if (result != null)
+        {
+            var roleresult = await _userManager.GetRolesAsync(result);
+            if (roleresult != null)
+            {
+                UserModel user = result;
+                try
+                {
+                    user.Role = roleresult[0]!;
+                }
+                catch { }
+                return user;
+            }
+        }
+        return null!;
+    }
+
+    //update a users role
+    public async Task<UserModel> UpdateUserRoleAsync(string id, string updatedrole)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+        if (user != null)
+        {
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, currentRoles);
+
+            await _userManager.AddToRoleAsync(user, updatedrole);
+
+            await _userManager.UpdateAsync(user);
+            return user;
+        }
+        return null!;       
     }
 }

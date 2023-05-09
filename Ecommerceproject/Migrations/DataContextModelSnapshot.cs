@@ -51,7 +51,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adresses");
+                    b.ToTable("Adresses", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.CartEntity", b =>
@@ -64,7 +64,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CartEntity");
+                    b.ToTable("CartEntity", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.CategoriesEntity", b =>
@@ -81,7 +81,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ColourEntity", b =>
@@ -99,7 +99,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colours");
+                    b.ToTable("Colours", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ContactformEntity", b =>
@@ -131,7 +131,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactForms");
+                    b.ToTable("ContactForms", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderEntity", b =>
@@ -163,7 +163,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderItemsEntity", b =>
@@ -194,7 +194,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderStatusEntity", b =>
@@ -212,7 +212,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses");
+                    b.ToTable("OrderStatuses", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductCategoryEntity", b =>
@@ -238,7 +238,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductColoursEntity", b =>
@@ -261,7 +261,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductColours");
+                    b.ToTable("ProductColours", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductEntity", b =>
@@ -298,7 +298,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("OrderStatusEntityId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserAddressEntity", b =>
@@ -322,7 +322,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserAdresses");
+                    b.ToTable("UserAdresses", (string)null);
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserEntity", b =>

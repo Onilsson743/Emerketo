@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jquYzpWqeosMaFcTBpu3hKpC8B5QgQTE3dhIoxbMypQ=",
+  "Hash": "jjdjfm6CkjieK2UzA4o48GYkkS+lDJG/1vgU1L3bfxU=",
   "Source": "Ecommerceproject",
   "BasePath": "_content/Ecommerceproject",
   "Mode": "Default",
@@ -1256,6 +1256,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\components\\_navbar.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_profile.scss",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "scss/components/_profile.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_profile.scss"
     },
     {
       "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",

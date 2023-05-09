@@ -52,7 +52,7 @@ public class AuthenticationDbService
                 var defaultrole = await _roleManager.FindByNameAsync("Admin");
                 if (defaultrole != null)
                 {
-                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name!);
                 }
             }
             else
@@ -60,7 +60,7 @@ public class AuthenticationDbService
                 var defaultrole = await _roleManager.FindByNameAsync("Member");
                 if (defaultrole != null)
                 {
-                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name);
+                    IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name!);
                 }
             }
                 

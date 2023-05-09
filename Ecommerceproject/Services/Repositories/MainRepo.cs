@@ -17,35 +17,56 @@ public abstract class MainRepo<TEntity> where TEntity : class
     //Gets all object from the database 
     public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
     {
-        return await _db.Set<TEntity>().ToListAsync();
+        try
+        {
+            return await _db.Set<TEntity>().ToListAsync();
+        }
+        catch (Exception) { return null!; }
     }
     public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression)
     {
-        return await _db.Set<TEntity>().Where(expression).ToListAsync();
+        try
+        {
+            return await _db.Set<TEntity>().Where(expression).ToListAsync();
+        }
+        catch (Exception) { return null!; }
     }
 
 
     //Gets one object from the database 
     public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
     {
-        var item = await _db.Set<TEntity>().FirstOrDefaultAsync(expression);
-        return item!;
+        try
+        {
+            var item = await _db.Set<TEntity>().FirstOrDefaultAsync(expression);
+            return item!;
+        }        
+        catch (Exception) { return null!; }
     }
 
     //Adds one object to the database 
     public virtual async Task<TEntity> AddAsync(TEntity entity)
     {
-        _db.Set<TEntity>().Add(entity);
-        await _db.SaveChangesAsync();
-        return entity;
+        try
+        {
+            _db.Set<TEntity>().Add(entity);
+            await _db.SaveChangesAsync();
+            return entity;
+        }
+        catch (Exception) { return null!; }
+
     }
 
     //Updates an object in the database
     public virtual async Task<TEntity> UpdateAsync(TEntity entity)
     {
-        _db.Set<TEntity>().Update(entity);
-        await _db.SaveChangesAsync();
-        return entity;
+        try
+        {
+            _db.Set<TEntity>().Update(entity);
+            await _db.SaveChangesAsync();
+            return entity;
+        }
+        catch (Exception) { return null!; }
     }
 
     //Removes an object from the database

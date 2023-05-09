@@ -8,6 +8,7 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Role</th>
+                <th>Edit user</th>
             </tr>
         </thead>
         <tbody>
@@ -19,15 +20,17 @@
                     <td>@user.PhoneNumber</td>
                     <td>
                         @user.Role
-                        <select name="cars" id="cars">
-                            <option>Change Role</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
+                    </td>
+                    <td>
+                        <a asp-controller="Admin" asp-action="EditUser" asp-route-id="@user.Id">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </section>    
+
+
+
