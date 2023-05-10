@@ -24,8 +24,7 @@ public class SignInController : Controller
     }
     #endregion
 
-    //SignIn
-    #region
+    #region SignIn
     public IActionResult Index()
     {
         return View();
@@ -43,8 +42,7 @@ public class SignInController : Controller
     }
     #endregion
 
-    //Registration
-    #region
+    #region Registration
     public IActionResult Registration()
     {
         return View();

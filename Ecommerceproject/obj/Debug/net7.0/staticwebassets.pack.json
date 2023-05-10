@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\Images\\Logo.svg"
     },
     {
-      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\389895dc-69ab-4b56-ba3f-c8ae252b07a0_Bild.jpg",
-      "PackagePath": "staticwebassets\\Images\\ProductImages\\389895dc-69ab-4b56-ba3f-c8ae252b07a0_Bild.jpg"
-    },
-    {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "PackagePath": "staticwebassets\\Images\\Stars.svg"
     },
@@ -27,6 +23,10 @@
     {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_addproductform.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_addproductform.scss"
     },
     {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",

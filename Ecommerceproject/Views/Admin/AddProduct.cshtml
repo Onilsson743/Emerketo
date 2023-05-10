@@ -30,7 +30,7 @@
         <small class="text-danger"><span asp-validation-for="ProductDescription"></span></small>
 
         @*Displays all the categories in the database*@
-        <div>
+        <div class="options">
             <p>Please select the categories for this product</p>
             @for (var i = 0; i < Model.ProductCategory.Count; i++)
             {
@@ -41,7 +41,7 @@
         </div>
 
         @*Displays all the colours in the database*@
-        <div>
+        <div class="options">
             <p>Please select all the available colours</p>
             @for (var i = 0; i < Model.ColoursList.Count; i++)
             {
@@ -49,10 +49,13 @@
                 <input asp-for="@Model.ColoursList[i].IsChecked" type="checkbox" />
                 <input asp-for="@Model.ColoursList[i].Name" type="hidden" />
             }
+            <h6>If you want to add a new colour please scroll to the bottom of the page</h6>
+            
         </div>
         
         <button type="submit" class="btn-theme">Add Product</button>
     </form>
+    <partial name="/Views/PartialViews/Components/Forms/_AddColourForm.cshtml" />
 </div>
 
 

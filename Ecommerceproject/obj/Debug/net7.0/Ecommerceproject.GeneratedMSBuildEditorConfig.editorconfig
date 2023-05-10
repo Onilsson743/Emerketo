@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/PartialViews/Components/Forms/_AddColourForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbFZpZXdzXENvbXBvbmVudHNcRm9ybXNcX0FkZENvbG91ckZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/PartialViews/Components/ProductCards/_ProductCardMedium.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbFZpZXdzXENvbXBvbmVudHNcUHJvZHVjdENhcmRzXF9Qcm9kdWN0Q2FyZE1lZGl1bS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,10 +62,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/PartialViews/Components/_HeaderWithInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbFZpZXdzXENvbXBvbmVudHNcX0hlYWRlcldpdGhJbmZvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/PartialViews/_AddProduct.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbFZpZXdzXF9BZGRQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Oscar/OneDrive/Skrivbord/win22/ASP.NET/Ecommerceproject/Views/PartialViews/_BestCollection.cshtml]

@@ -1,7 +1,6 @@
 using Ecommerceproject.Context;
 using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services;
-using Ecommerceproject.Services.Claims;
 using Ecommerceproject.Services.DatabaseServices;
 using Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 using Ecommerceproject.Services.Repositories;
@@ -20,46 +19,40 @@ builder.Services.AddDbContext<DataContext>(x =>
     }
 );
 
+
+//Repos
 builder.Services.AddScoped<ProductDbRepo>();
-builder.Services.AddScoped<ProductDbServices>();
-
 builder.Services.AddScoped<ColourDbRepo>();
-builder.Services.AddScoped<ColourDbServices>();
-
 builder.Services.AddScoped<CategoryDbRepo>();
-builder.Services.AddScoped<CategoryDbServices>();
-
 builder.Services.AddScoped<ContactFormDbRepo>();
-builder.Services.AddScoped<ContactFormDbServices>();
-
 builder.Services.AddScoped<UserDbRepo>();
-builder.Services.AddScoped<UserDbServices>();
-
 builder.Services.AddScoped<AddressDbRepo>();
 builder.Services.AddScoped<UserAddressDbRepo>();
+
+//Services
+builder.Services.AddScoped<ProductDbServices>();
+builder.Services.AddScoped<ColourDbServices>();
+builder.Services.AddScoped<CategoryDbServices>();
+builder.Services.AddScoped<ContactFormDbServices>();
+builder.Services.AddScoped<UserDbServices>();
 builder.Services.AddScoped<AddressDbServices>();
-
 builder.Services.AddScoped<FileUploadServices>();
-
-
 builder.Services.AddScoped<AuthenticationDbService>();
+
+
+//Identity
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 {
     x.SignIn.RequireConfirmedAccount = false;
     x.User.RequireUniqueEmail = true;
-})
-.AddRoles<IdentityRole>()
-.AddRoleManager<RoleManager<IdentityRole>>()
-.AddEntityFrameworkStores<DataContext>();
+}).AddRoles<IdentityRole>().AddRoleManager<RoleManager<IdentityRole>>().AddEntityFrameworkStores<DataContext>();
 
 builder.Services.ConfigureApplicationCookie(x =>
 {
     x.LoginPath = "/SignIn";
     x.LogoutPath = "/";
-    x.AccessDeniedPath = "/denied";
+    x.AccessDeniedPath = "/denied";    
 });
-
-
 
 
 

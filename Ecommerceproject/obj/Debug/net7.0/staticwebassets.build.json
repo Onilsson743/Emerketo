@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nCUUzPE8XVgfHny/dsVMXVF6aeMPFvuYEX+8/AgZgLk=",
+  "Hash": "SOQE+p2uOk8C4t+7q3ep7h4OCKWHpoGKsgLJKYoLfEk=",
   "Source": "Ecommerceproject",
   "BasePath": "_content/Ecommerceproject",
   "Mode": "Default",
@@ -1105,23 +1105,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\Logo.svg"
     },
     {
-      "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\389895dc-69ab-4b56-ba3f-c8ae252b07a0_Bild.jpg",
-      "SourceId": "Ecommerceproject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\",
-      "BasePath": "_content/Ecommerceproject",
-      "RelativePath": "Images/ProductImages/389895dc-69ab-4b56-ba3f-c8ae252b07a0_Bild.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\ProductImages\\389895dc-69ab-4b56-ba3f-c8ae252b07a0_Bild.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "SourceId": "Ecommerceproject",
       "SourceType": "Discovered",
@@ -1154,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_addproductform.scss",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "scss/components/_addproductform.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_addproductform.scss"
     },
     {
       "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",

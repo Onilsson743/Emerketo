@@ -788,3 +788,10 @@ a:hover {
 .profile .details .btn-theme {
   padding: 2px 10px;
 }
+
+.AddProductForm .options p {
+  margin: 25px 0 0 0;
+}
+.AddProductForm .options label {
+  margin: 0;
+}
