@@ -24,7 +24,7 @@ public class AccountController : Controller
         {
             UserModel user = new UserModel
             {
-                Email = User.Identity!.Name!
+                Email = User.Identity.Name
             };
             UserModel result = await _userService.GetOneUserAsync(user);
             return View(result);

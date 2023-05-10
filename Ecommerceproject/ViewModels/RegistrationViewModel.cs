@@ -49,11 +49,12 @@ public class RegistrationViewModel
     public string ConfirmPassword { get; set; } = null!;
 
     [Display(Name = "Upload Profile Image (Optional)")]
+    [DataType(DataType.Upload)]
     public IFormFile? ImageFile { get; set; }
 
 
     [Display(Name = "I have read and accepts the terms and agreements")]
-    [Required(ErrorMessage = "You must aggree the terms and agreements")]
+    [Range(typeof(bool), "true", "true", ErrorMessage = "You must agree to the terms and agreements.")]
     public bool TermsAndAgreements { get; set; } = false;
 
 

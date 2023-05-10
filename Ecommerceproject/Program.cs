@@ -39,6 +39,8 @@ builder.Services.AddScoped<AddressDbRepo>();
 builder.Services.AddScoped<UserAddressDbRepo>();
 builder.Services.AddScoped<AddressDbServices>();
 
+builder.Services.AddScoped<FileUploadServices>();
+
 
 builder.Services.AddScoped<AuthenticationDbService>();
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>

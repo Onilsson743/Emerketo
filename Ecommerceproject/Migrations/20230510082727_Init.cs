@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Ecommerceproject.Migrations
 {
     /// <inheritdoc />
@@ -48,6 +50,7 @@ namespace Ecommerceproject.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -306,18 +309,17 @@ namespace Ecommerceproject.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ArticleNumber = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
                     ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductInStock = table.Column<int>(type: "int", nullable: false),
-                    ProductImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrderStatusEntityId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.ArticleNumber);
                     table.ForeignKey(
                         name: "FK_Products_OrderStatuses_OrderStatusEntityId",
                         column: x => x.OrderStatusEntityId,
@@ -332,6 +334,7 @@ namespace Ecommerceproject.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductArticleNumber = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: false),
                     CartId = table.Column<int>(type: "int", nullable: false)
@@ -352,10 +355,10 @@ namespace Ecommerceproject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderItems_Products_ProductId",
-                        column: x => x.ProductId,
+                        name: "FK_OrderItems_Products_ProductArticleNumber",
+                        column: x => x.ProductArticleNumber,
                         principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "ArticleNumber",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -363,13 +366,16 @@ namespace Ecommerceproject.Migrations
                 name: "ProductCategories",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductArticleNumber = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     CategoriesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductCategories", x => new { x.ProductId, x.CategoryId });
+                    table.PrimaryKey("PK_ProductCategories", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ProductCategories_Categories_CategoriesId",
                         column: x => x.CategoriesId,
@@ -377,10 +383,10 @@ namespace Ecommerceproject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductCategories_Products_ProductId",
-                        column: x => x.ProductId,
+                        name: "FK_ProductCategories_Products_ProductArticleNumber",
+                        column: x => x.ProductArticleNumber,
                         principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "ArticleNumber",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -388,12 +394,15 @@ namespace Ecommerceproject.Migrations
                 name: "ProductColours",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(type: "int", nullable: false),
+                    ProductArticleNumber = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ColourId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductColours", x => new { x.ProductId, x.ColourId });
+                    table.PrimaryKey("PK_ProductColours", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ProductColours_Colours_ColourId",
                         column: x => x.ColourId,
@@ -401,11 +410,31 @@ namespace Ecommerceproject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductColours_Products_ProductId",
-                        column: x => x.ProductId,
+                        name: "FK_ProductColours_Products_ProductArticleNumber",
+                        column: x => x.ProductArticleNumber,
                         principalTable: "Products",
-                        principalColumn: "Id",
+                        principalColumn: "ArticleNumber",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "32ee0294-21d4-4d70-b90f-6f73c6f75c2a", null, "Admin", "ADMIN" },
+                    { "3c214366-b268-4320-8094-9978470cb8fb", null, "Member", "MEMBER" },
+                    { "84784aad-d388-45af-8d78-62b5de830482", null, "Manager", "MANAGER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Category" },
+                values: new object[,]
+                {
+                    { 1, "New" },
+                    { 2, "Popular" },
+                    { 3, "Featured" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -458,9 +487,9 @@ namespace Ecommerceproject.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_ProductId",
+                name: "IX_OrderItems_ProductArticleNumber",
                 table: "OrderItems",
-                column: "ProductId");
+                column: "ProductArticleNumber");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_AdressId",
@@ -483,9 +512,19 @@ namespace Ecommerceproject.Migrations
                 column: "CategoriesId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_ProductArticleNumber",
+                table: "ProductCategories",
+                column: "ProductArticleNumber");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProductColours_ColourId",
                 table: "ProductColours",
                 column: "ColourId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductColours_ProductArticleNumber",
+                table: "ProductColours",
+                column: "ProductArticleNumber");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_OrderStatusEntityId",

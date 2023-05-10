@@ -51,7 +51,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Adresses", (string)null);
+                    b.ToTable("Adresses");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.CartEntity", b =>
@@ -64,7 +64,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CartEntity", (string)null);
+                    b.ToTable("CartEntity");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.CategoriesEntity", b =>
@@ -81,7 +81,24 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "New"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Popular"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Featured"
+                        });
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ColourEntity", b =>
@@ -99,7 +116,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colours", (string)null);
+                    b.ToTable("Colours");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ContactformEntity", b =>
@@ -131,7 +148,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactForms", (string)null);
+                    b.ToTable("ContactForms");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderEntity", b =>
@@ -163,7 +180,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderItemsEntity", b =>
@@ -180,6 +197,9 @@ namespace Ecommerceproject.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("ProductArticleNumber")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -192,9 +212,9 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductArticleNumber");
 
-                    b.ToTable("OrderItems", (string)null);
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.OrderStatusEntity", b =>
@@ -212,7 +232,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses", (string)null);
+                    b.ToTable("OrderStatuses");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductCategoryEntity", b =>
@@ -229,6 +249,9 @@ namespace Ecommerceproject.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("ProductArticleNumber")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -236,9 +259,9 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("CategoriesId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductArticleNumber");
 
-                    b.ToTable("ProductCategories", (string)null);
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductColoursEntity", b =>
@@ -252,6 +275,9 @@ namespace Ecommerceproject.Migrations
                     b.Property<int>("ColourId")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("ProductArticleNumber")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -259,18 +285,16 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("ColourId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductArticleNumber");
 
-                    b.ToTable("ProductColours", (string)null);
+                    b.ToTable("ProductColours");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ProductEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("ArticleNumber")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("OrderStatusEntityId")
                         .HasColumnType("int");
@@ -283,7 +307,6 @@ namespace Ecommerceproject.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductInStock")
@@ -294,11 +317,11 @@ namespace Ecommerceproject.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ArticleNumber");
 
                     b.HasIndex("OrderStatusEntityId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserAddressEntity", b =>
@@ -322,7 +345,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserAdresses", (string)null);
+                    b.ToTable("UserAdresses");
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.UserEntity", b =>
@@ -348,6 +371,9 @@ namespace Ecommerceproject.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -429,19 +455,19 @@ namespace Ecommerceproject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a368ac98-666b-4062-bbad-b52a1ee78930",
+                            Id = "32ee0294-21d4-4d70-b90f-6f73c6f75c2a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "c76c15fd-ae37-4d2b-b6cd-0c631fd0f08b",
+                            Id = "84784aad-d388-45af-8d78-62b5de830482",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "ce7631be-7988-45d4-9d2a-22112859ba96",
+                            Id = "3c214366-b268-4320-8094-9978470cb8fb",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });
@@ -596,7 +622,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasOne("Ecommerceproject.Models.Entities.ProductEntity", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductArticleNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -617,7 +643,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasOne("Ecommerceproject.Models.Entities.ProductEntity", "Product")
                         .WithMany("Categories")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductArticleNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -636,7 +662,7 @@ namespace Ecommerceproject.Migrations
 
                     b.HasOne("Ecommerceproject.Models.Entities.ProductEntity", "Product")
                         .WithMany("Colours")
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("ProductArticleNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

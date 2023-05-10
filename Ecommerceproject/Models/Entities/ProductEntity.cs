@@ -6,9 +6,8 @@ namespace Ecommerceproject.Models.Entities;
 public class ProductEntity
 {
     [Key]
-    public int Id { get; set; }
+    public Guid ArticleNumber { get; set; } = Guid.NewGuid();
 
-    [Required]
     [StringLength(100)]
     public string ProductName { get; set; } = null!;
 
@@ -16,13 +15,13 @@ public class ProductEntity
     [Column(TypeName = "money")]
     public decimal Price { get; set; }
 
-    [Required]
     public string ProductDescription { get; set; } = null!;
 
     public ICollection<ProductCategoryEntity> Categories { get; set; } = new List<ProductCategoryEntity>();
 
     [Required]
     public int ProductInStock { get; set; }
-    public string ProductImageUrl { get; set; } = null!;
+
+    public string? ProductImageUrl { get; set; }
     public ICollection<ProductColoursEntity> Colours { get; set; } = new List<ProductColoursEntity>();
 }

@@ -22,11 +22,11 @@ namespace Ecommerceproject.Controllers
 
         //Redirects to the details page of the selected product
         [HttpGet]
-        public async Task<IActionResult> Details() 
+        public async Task<IActionResult> Details(Guid articlenumber) 
         {
 
-            var id = Request.Path.Value.Split("/");
-            var result = await _productService.GetOneAsync(Int32.Parse(id[3]));
+            //var id = Request.Path.Value.Split("/");
+            var result = await _productService.GetOneAsync(articlenumber);
 
             if (result != null) 
             {

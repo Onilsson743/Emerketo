@@ -4,6 +4,7 @@ using Ecommerceproject.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 
@@ -15,15 +16,17 @@ public class AuthenticationDbService
     private readonly AddressDbServices _addressService;
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly UserDbServices _userService;
+    private readonly FileUploadServices _fileService;
 
 
-    public AuthenticationDbService(UserManager<UserEntity> authService, AddressDbServices addressService, SignInManager<UserEntity> signInService, RoleManager<IdentityRole> roleManager, UserDbServices userService)
+    public AuthenticationDbService(UserManager<UserEntity> authService, AddressDbServices addressService, SignInManager<UserEntity> signInService, RoleManager<IdentityRole> roleManager, UserDbServices userService, FileUploadServices fileService)
     {
         _userManager = authService;
         _addressService = addressService;
         _signInService = signInService;
         _roleManager = roleManager;
         _userService = userService;
+        _fileService = fileService;
     }
 
 
@@ -42,12 +45,18 @@ public class AuthenticationDbService
     public async Task<bool> RegisterAsync(RegistrationViewModel model)
     {
         UserEntity user = model;
+        if (model.ImageFile != null)
+        {
+            user.ImageUrl = $"{user.Email}_{model.ImageFile.FileName}";
+            await _fileService.SaveProfileImageAsync(user, model.ImageFile);
+        }
+
         var anyornull = await _userService.CheckAnyUserAsync();
         
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
-            if (anyornull == false)
+            if (anyornull == true)
             {
                 var defaultrole = await _roleManager.FindByNameAsync("Admin");
                 if (defaultrole != null)
@@ -63,7 +72,6 @@ public class AuthenticationDbService
                     IdentityResult roleresult = await _userManager.AddToRoleAsync(user, defaultrole.Name!);
                 }
             }
-                
 
             var address = await _addressService.GetOrCreateAsync(model);
             if (address != null)

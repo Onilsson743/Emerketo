@@ -7,12 +7,12 @@ namespace Ecommerceproject.Models;
 
 public class ProductModel
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; } 
     public string ProductName { get; set; } = null!;
     public decimal Price { get; set; }
     public string ProductDescription { get; set; } = null!;
     public List<string> ProductCategory { get; set; } = null!;
     public int ProductInStock { get; set; }
-    public string ProductImageUrl { get; set; } = null!;
+    public string? ProductImageUrl { get; set; }
     public List<string> Colours { get; set; } = new List<string>();
 }

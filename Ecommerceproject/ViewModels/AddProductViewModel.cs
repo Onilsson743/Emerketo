@@ -24,9 +24,9 @@ namespace Ecommerceproject.ViewModels
         [Required(ErrorMessage = "You must set an amount in stock")]
         public int ProductInStock { get; set; }
 
-        [Display(Name = "Image URL*")]
-        [Required(ErrorMessage = "An image URL is required")]
-        public string ProductImageUrl { get; set; } = null!;
+        [Display(Name = "Image*")]
+        [DataType(DataType.Upload)]
+        public IFormFile? ProductImage { get; set; }
 
         public List<CheckBoxModel> ColoursList { get; set; } = new List<CheckBoxModel>();
 

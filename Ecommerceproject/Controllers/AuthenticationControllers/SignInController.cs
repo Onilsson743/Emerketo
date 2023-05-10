@@ -1,5 +1,7 @@
-﻿using Ecommerceproject.Models.Entities;
+﻿using Ecommerceproject.Models;
+using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services;
+using Ecommerceproject.Services.DatabaseServices;
 using Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 using Ecommerceproject.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -11,10 +13,14 @@ public class SignInController : Controller
 {
     #region
     private readonly AuthenticationDbService _authServices;
+    private readonly UserDbServices _userServices;
+    private readonly FileUploadServices _fileServices;
 
-    public SignInController(AuthenticationDbService authServices)
+    public SignInController(AuthenticationDbService authServices, UserDbServices userServices, FileUploadServices fileServices)
     {
         _authServices = authServices;
+        _userServices = userServices;
+        _fileServices = fileServices;
     }
     #endregion
 
@@ -22,7 +28,6 @@ public class SignInController : Controller
     #region
     public IActionResult Index()
     {
-
         return View();
     }
     [HttpPost]
@@ -53,9 +58,11 @@ public class SignInController : Controller
             if (await _authServices.UserExistsAsync(x => x.Email == model.Email))
             {
                 ModelState.AddModelError("", "A user with the same email already exists");
+                return View(model);
             }
+            
             if (await _authServices.RegisterAsync(model))
-            {
+            {           
                 return RedirectToAction("Index");
             }
         }

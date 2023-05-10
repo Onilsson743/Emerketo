@@ -12,10 +12,12 @@ namespace Ecommerceproject.Services.DatabaseServices
         #region
         private readonly ProductDbRepo _productService;
         private readonly DataContext _db;
-        public ProductDbServices(ProductDbRepo productService, DataContext db)
+        private readonly FileUploadServices _fileServices;
+        public ProductDbServices(ProductDbRepo productService, DataContext db, FileUploadServices fileServices)
         {
             _productService = productService;
             _db = db;
+            _fileServices = fileServices;
         }
         #endregion
 
@@ -29,9 +31,14 @@ namespace Ecommerceproject.Services.DatabaseServices
                 ProductName = product.ProductName,
                 Price = product.Price,
                 ProductDescription = product.ProductDescription,
-                ProductInStock = product.ProductInStock,
-                ProductImageUrl = product.ProductImageUrl,
+                ProductInStock = product.ProductInStock
             };
+            if (product.ProductImage != null)
+            {
+                productEntity.ProductImageUrl = $"{productEntity.ArticleNumber}_{product.ProductImage.FileName}";
+                await _fileServices.SaveProductImageAsync(productEntity, product.ProductImage);
+            }
+            
 
 
             foreach (var category in product.ProductCategory)
@@ -99,15 +106,14 @@ namespace Ecommerceproject.Services.DatabaseServices
                     {
                         colours.Add(colour.Colour.Colour);
                     }
-
                     model.Add(new ProductModel
                     {
-                        Id = product.Id,
+                        Id = product.ArticleNumber,
                         ProductName = product.ProductName,
                         Price = Math.Round(product.Price, 2),
                         ProductDescription = product.ProductDescription,
                         ProductInStock = product.ProductInStock,
-                        ProductImageUrl = product.ProductImageUrl,
+                        ProductImageUrl = product.ProductImageUrl!,
                         ProductCategory = categories,
                         Colours = colours                        
                     });
@@ -119,9 +125,9 @@ namespace Ecommerceproject.Services.DatabaseServices
         }
 
         //Gets one product
-        public async Task<ProductModel> GetOneAsync(int id)
+        public async Task<ProductModel> GetOneAsync(Guid articlenumber)
         {
-            var result = await _db.Products.Include(x => x.Categories).ThenInclude(c => c.Categories).Include(x => x.Colours).ThenInclude(c => c.Colour).FirstOrDefaultAsync(x => x.Id == id);
+            var result = await _db.Products.Include(x => x.Categories).ThenInclude(c => c.Categories).Include(x => x.Colours).ThenInclude(c => c.Colour).FirstOrDefaultAsync(x => x.ArticleNumber == articlenumber);
             if (result != null)
             {
                 var categories = new List<string>();
@@ -137,13 +143,13 @@ namespace Ecommerceproject.Services.DatabaseServices
                 }
                 var product = new ProductModel
                 {
-                    Id = result.Id,
+                    Id = result.ArticleNumber,
                     ProductName = result.ProductName,
                     Price = Math.Round(result.Price, 2),
                     ProductDescription = result.ProductDescription,
                     ProductCategory = categories,
                     ProductInStock = result.ProductInStock,
-                    ProductImageUrl = result.ProductImageUrl,
+                    ProductImageUrl = result.ProductImageUrl!,
                     Colours = colours
 
                 };

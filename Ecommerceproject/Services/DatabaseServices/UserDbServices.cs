@@ -2,6 +2,7 @@
 using Ecommerceproject.Models;
 using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services.Repositories;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -60,6 +61,7 @@ public class UserDbServices
     }
 
     //Gets one user
+    #region
     public async Task<UserModel> GetOneUserAsync(string id)
     {
         var result = await _userRepo.GetAsync(x => x.Id == id);
@@ -78,9 +80,9 @@ public class UserDbServices
         }
         return null!;
     }
-    public async Task<UserModel> GetOneUserAsync(UserModel name)
+    public async Task<UserModel> GetOneUserAsync(UserModel model)
     {
-        var result = await _userRepo.GetAsync(x => x.Email == name.Email);
+        var result = await _userRepo.GetAsync(x => x.Email == model.Email);
         if (result != null)
         {
             var roleresult = await _userManager.GetRolesAsync(result);
@@ -97,6 +99,7 @@ public class UserDbServices
         }
         return null!;
     }
+    #endregion
 
     //update a users role
     public async Task<UserModel> UpdateUserRoleAsync(string id, string updatedrole)
@@ -114,4 +117,6 @@ public class UserDbServices
         }
         return null!;       
     }
+
+
 }

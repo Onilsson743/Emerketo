@@ -3,7 +3,7 @@
 
 <div class="AddProductForm container">
     <h5 style="color: #636363; margin-top: 100px;">Add a new product.</h5>
-    <form method="post" class="form mt-4">
+    <form method="post" enctype="multipart/form-data" class="form mt-4">
         <span class="split-input">
             <span>
                 <label asp-for="ProductName"></label>
@@ -17,9 +17,9 @@
             </span>
         </span>
 
-        <label asp-for="ProductImageUrl"></label>
-        <input asp-for="ProductImageUrl" type="text">
-        <small class="text-danger"><span asp-validation-for="ProductImageUrl"></span></small>
+        <label asp-for="ProductImage"></label>
+        <input asp-for="ProductImage" >
+        <small class="text-danger"><span asp-validation-for="ProductImage"></span></small>
 
         <label asp-for="ProductInStock" style="margin-bottom: -20px;"></label>
         <input asp-for="ProductInStock" type="number" />

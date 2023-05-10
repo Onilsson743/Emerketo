@@ -10,6 +10,9 @@
 
     img {
         width: 90%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50%;
         margin-bottom: 30px;
 
         @include lg {
