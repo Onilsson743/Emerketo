@@ -1,18 +1,12 @@
-﻿@model IEnumerable<ProductModel>
-
-<div class="container all-products">
-
-    <div class="products">
-        @{
-            foreach (var product in Model)
-            {
-                <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
-            }
-        }
-    </div>
+﻿@{
+    ViewData["Title"] = "Admin Menu";
+}
 
 
-
-    <a class="btn-theme fixed-btn" asp-controller="Admin" asp-action="AddProduct">Add Product</a>
-    
+<div class="backoffice-menu container">
+    <a asp-controller="Admin" asp-action="Users" class="option-link">Manage Existing Users<i class="bi bi-people-fill"></i></a>
+    <a asp-controller="SignIn" asp-action="Registration" class="option-link">Add New User<i class="bi bi-person-plus-fill"></i></a>
+    <a asp-controller="Admin" asp-action="ProductsPage" class="option-link">Manage Products<i class="bi bi-boxes"></i></a>
+    <a asp-controller="Admin" asp-action="AddProduct" class="option-link">Add New Product<i class="bi bi-boxes"></i></a>
 </div>
+

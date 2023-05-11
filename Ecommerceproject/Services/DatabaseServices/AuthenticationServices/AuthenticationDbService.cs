@@ -56,7 +56,7 @@ public class AuthenticationDbService
         var result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
-            if (anyornull == true)
+            if (anyornull == false)
             {
                 var defaultrole = await _roleManager.FindByNameAsync("Admin");
                 if (defaultrole != null)

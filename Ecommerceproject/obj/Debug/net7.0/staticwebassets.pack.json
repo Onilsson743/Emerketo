@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Images\\Logo.svg"
     },
     {
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg"
+    },
+    {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "PackagePath": "staticwebassets\\Images\\Stars.svg"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_allproducts.scss"
+    },
+    {
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_backofficemenu.scss",
+      "PackagePath": "staticwebassets\\scss\\components\\_backofficemenu.scss"
     },
     {
       "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Manage Products";
+}
+@model IEnumerable<ProductModel>
+
+<div class="container all-products">
+    @{
+        if (Model.Any())
+        {
+            foreach (var product in Model)
+            {
+                <div class="products">
+                    <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+                </div>
+            }
+        }
+        else
+        {
+            <div style="width: 100%;">
+                <h1 style="text-align: center; width: 100%;">No Products Found!</h1>
+                <h3 style="text-align: center; width: 100%;">Please add new products</h3>
+            </div>
+
+        }
+
+    }
+    <a class="btn-theme fixed-btn" asp-controller="Admin" asp-action="AddProduct">Add Product</a>
+
+</div>

@@ -33,8 +33,7 @@ public class AdminController : Controller
         return View(model);
     }
 
-    //Add new product section
-    #region
+    #region Add new product page
     //Add product page
     public async Task<IActionResult> AddProduct()
     {
@@ -60,6 +59,7 @@ public class AdminController : Controller
     }
     #endregion
 
+    //Page with a list of all the users
     public async Task<IActionResult> Users()
     {
         var users = await _userService.GetAllUsersAsync();
@@ -67,7 +67,8 @@ public class AdminController : Controller
         return View(users);
     }
 
-    
+
+    #region Edit selected user page
     public async Task<IActionResult> EditUser(string id)
     {
         var user = await _userService.GetOneUserAsync(id);
@@ -88,6 +89,13 @@ public class AdminController : Controller
             return RedirectToAction("Users");
         }
         return View();
+    }
+    #endregion
+
+    public async Task<IActionResult> ProductsPage()
+    {
+        IEnumerable<ProductModel> model = await _productService.GetAllAsync();
+        return View(model);
     }
 
 }

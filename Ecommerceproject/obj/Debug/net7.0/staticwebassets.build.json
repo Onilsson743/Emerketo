@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SOQE+p2uOk8C4t+7q3ep7h4OCKWHpoGKsgLJKYoLfEk=",
+  "Hash": "V5bMerln5h+GjmBD2cYFvImwxWyLBJ7xSbI049uFIj0=",
   "Source": "Ecommerceproject",
   "BasePath": "_content/Ecommerceproject",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Logo.svg"
     },
     {
+      "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "Images/ProfileImages/o.nilsson743@gmail.com_1665831061683.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "SourceId": "Ecommerceproject",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\components\\_allproducts.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_backofficemenu.scss",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "scss/components/_backofficemenu.scss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scss\\components\\_backofficemenu.scss"
     },
     {
       "Identity": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\ASP.NET\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",

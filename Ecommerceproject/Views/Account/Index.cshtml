@@ -2,27 +2,25 @@
     ViewData["Title"] = "Account";
 }
 @model UserModel
-<section class="container">
-    <div class="profile">
-        <img src="/Images/ProfileImages/@Model.ProfileImgUrl" alt="profile image" />
+<section class="container profile">
+    <img src="/Images/ProfileImages/@Model.ProfileImgUrl" alt="profile image" />
 
-        <div class="details">
-            <div class="detail">
-                <h6>Name: </h6>
-                <p>@Model.FirstName @Model.LastName</p>
-            </div>
-            <div class="detail">
-                <h6>Email: </h6>
-                <p>@Model.Email</p>
-            </div>
-            <div class="detail">
-                <h6>Phone Number: </h6>
-                <p>@Model.PhoneNumber</p>
-            </div>
-            <div class="detail">
-                <h6>Role: </h6>
-                <p>@Model.Role</p>
-            </div>
+    <div class="details">
+        <div class="detail">
+            <h6>Name: </h6>
+            <p>@Model.FirstName @Model.LastName</p>
+        </div>
+        <div class="detail">
+            <h6>Email: </h6>
+            <p>@Model.Email</p>
+        </div>
+        <div class="detail">
+            <h6>Phone Number: </h6>
+            <p>@Model.PhoneNumber</p>
+        </div>
+        <div class="detail">
+            <h6>Role: </h6>
+            <p>@Model.Role</p>
         </div>
     </div>
 </section>
