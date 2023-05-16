@@ -1,7 +1,5 @@
 ﻿@model ContactUsFormViewModel
 
-
-
 @{
     HeaderWithInfoModel header = new HeaderWithInfoModel()
             {
@@ -44,7 +42,7 @@
                 <small class="text-danger"><span asp-validation-for="Company"></span></small>
             </span>
         </span>
-        <label asp-for="Message" style="margin-bottom: -20px;"></label>
+        <label asp-for="Message" ></label>
         <textarea asp-for="Message" id="" cols="20" rows="5"></textarea>
         <small class="text-danger"><span asp-validation-for="Message"></span></small>
 

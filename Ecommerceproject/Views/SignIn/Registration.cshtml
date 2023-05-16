@@ -13,13 +13,15 @@
         <span class="split-input">
             <span>
                 <label asp-for="FirstName"></label>
-                <input asp-for="FirstName" type="text">
+                <input asp-for="FirstName" id="FormFirstName" type="text" oninput="ValidateFirstName()">
                 <small class="text-danger"><span asp-validation-for="FirstName"></span></small>
+                <small class="text-danger"><p id="FirstNameError"></p></small>
             </span>
             <span>
                 <label asp-for="LastName"></label>
-                <input asp-for="LastName" type="text">
+                <input asp-for="LastName" type="text" id="FormLastName" oninput="ValidateLastName()">
                 <small class="text-danger"><span asp-validation-for="LastName"></span></small>
+                <small class="text-danger"><p id="LastNameError"></p></small>
             </span>
         </span>
 
@@ -30,8 +32,9 @@
         <span class="split-input">
             <span>
                 <label asp-for="PostalCode"></label>
-                <input asp-for="PostalCode" type="text">
+                <input asp-for="PostalCode" type="text" id="FormPostalCode" oninput="ValidatePostalCode()">
                 <small class="text-danger"><span asp-validation-for="PostalCode"></span></small>
+                <small class="text-danger"><p id="PostalCodeError"></p></small>
             </span>
             <span>
                 <label asp-for="City"></label>
@@ -52,16 +55,23 @@
         </span>
 
         <label asp-for="Email"></label>
-        <input asp-for="Email" type="text">
+        <input asp-for="Email" type="text" id="FormEmail" oninput="ValidateEmail()">
         <small class="text-danger"><span asp-validation-for="Email"></span></small>
+        <small class="text-danger"><p id="EmailError"></p></small>
 
         <label asp-for="Password"></label>
-        <input asp-for="Password" >
-        <small class="text-danger"><span asp-validation-for="Password"></span></small>
+        <input asp-for="Password" id="FormPassword" oninput="ValidatePassword()">
+        <small class="text-danger d-none"><span asp-validation-for="Password"></span></small>
+        <small class="text-danger d-none" id="PasswordLengthError"><p id="PasswordLengthErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordLowerCharacterError"><p id="PasswordLowerCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordUpperCharacterError"><p id="PasswordUpperCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordSpecialCharacterError"><p id="PasswordSpecialCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordNumberError"><p id="PasswordNumberErrorMessage"></p></small>
 
         <label asp-for="ConfirmPassword"></label>
-        <input asp-for="ConfirmPassword" >
+        <input asp-for="ConfirmPassword" id="FormConfirmPassword" oninput="ValidateConfirmPassword()">
         <small class="text-danger"><span asp-validation-for="ConfirmPassword"></span></small>
+        <small class="text-danger"><p id="ConfirmPasswordError"></p></small>
 
         <label asp-for="ImageFile"></label>
         <input asp-for="ImageFile" type="file">

@@ -73,6 +73,9 @@ a:hover {
   flex-direction: column;
   margin-bottom: 150px;
 }
+.form p {
+  margin: 0;
+}
 .form .split-input {
   display: flex;
   justify-content: space-between;

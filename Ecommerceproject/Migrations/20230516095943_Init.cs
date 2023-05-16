@@ -422,9 +422,9 @@ namespace Ecommerceproject.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "32ee0294-21d4-4d70-b90f-6f73c6f75c2a", null, "Admin", "ADMIN" },
-                    { "3c214366-b268-4320-8094-9978470cb8fb", null, "Member", "MEMBER" },
-                    { "84784aad-d388-45af-8d78-62b5de830482", null, "Manager", "MANAGER" }
+                    { "191506fc-d4b8-41c9-99d5-406edcd50395", null, "Manager", "MANAGER" },
+                    { "aa6f6285-84c9-45c3-95d9-841e0f5bf935", null, "Member", "MEMBER" },
+                    { "f3f2e1c6-a6ca-4610-ae21-3e7a489af3d6", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
