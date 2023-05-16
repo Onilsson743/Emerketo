@@ -1,12 +1,31 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model List<ProductModel>
 @{
+    List<ProductModel> newproducts = new();
+    List<ProductModel> popularproducts = new();
+    List<ProductModel> featuredproducts = new();
+    foreach(ProductModel product in Model)
+    {
+        if (product.ProductCategory.Contains("New"))
+        {
+            newproducts.Add(product);
+        }
+        if (product.ProductCategory.Contains("Popular"))
+        {
+            popularproducts.Add(product);
+        }
+        if (product.ProductCategory.Contains("Featured"))
+        {
+            featuredproducts.Add(product);
+        }
+    }
 }
 
 
 <partial name="/Views/PartialViews/_Header.cshtml" />
-<partial name="/Views/PartialViews/_BestCollection.cshtml" />
-<partial name="/Views/PartialViews/_Sales.cshtml" />
-<partial name="/Views/PartialViews/_ProductsCarousel.cshtml" />
+<partial name="/Views/PartialViews/_BestCollection.cshtml" data="@popularproducts" />
+<partial name="/Views/PartialViews/_Sales.cshtml" data="@newproducts"/>
+<partial name="/Views/PartialViews/_ProductsCarousel.cshtml" data="@popularproducts" />
 <partial name="/Views/PartialViews/_SubscribeBar.cshtml" />

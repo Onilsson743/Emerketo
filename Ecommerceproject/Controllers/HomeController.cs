@@ -1,14 +1,22 @@
-﻿using Ecommerceproject.ViewModels;
+﻿using Ecommerceproject.Services.DatabaseServices;
+using Ecommerceproject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerceproject.Controllers;
 
 public class HomeController : Controller
 {
-    public IActionResult Index()
+
+    private readonly ProductDbServices _productService;
+    public HomeController(ProductDbServices productService)
+    {
+        _productService = productService;
+    }
+    public async Task<IActionResult> Index()
     {
         ViewData["Title"] = "Home";
-        return View();
+        var products = await _productService.GetAllAsync();
+        return View(products);
     }
 
     public IActionResult Contact()

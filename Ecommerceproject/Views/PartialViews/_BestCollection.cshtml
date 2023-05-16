@@ -1,14 +1,11 @@
-﻿
-@{
-    var test = new DataServices();
-}
+﻿@model List<ProductModel>
 
 <div class="container best-collection ">
     <h1>Best Collection</h1>
     <p class="categories">All ⁄ Bags ⁄ Dress ⁄ Decoration ⁄ Essentials ⁄ Interior ⁄ Laptop ⁄ Mobile ⁄ Beauty</p>
     <section class="productcards">
 
-        @foreach (var product in test.ProductList)
+        @foreach (var product in Model)
         {
             <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
         }

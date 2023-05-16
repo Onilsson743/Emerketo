@@ -24,8 +24,6 @@ namespace Ecommerceproject.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(Guid articlenumber) 
         {
-
-            //var id = Request.Path.Value.Split("/");
             var result = await _productService.GetOneAsync(articlenumber);
 
             if (result != null) 

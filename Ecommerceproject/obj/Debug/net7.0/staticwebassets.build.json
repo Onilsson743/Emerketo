@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A9f0QdSUJyk/pTYJNyLfV3/WkwwbJJ5RgpClaNFukZY=",
+  "Hash": "K1zmnRn1ITsyRZr9DRzKgnfGkRU8TT0a0+afIEicQ1k=",
   "Source": "Ecommerceproject",
   "BasePath": "_content/Ecommerceproject",
   "Mode": "Default",
@@ -1103,6 +1103,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Logo.svg"
+    },
+    {
+      "Identity": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "Images/ProductImages/8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ProductImages\\8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif"
+    },
+    {
+      "Identity": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "Images/ProductImages/c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ProductImages\\c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg"
     },
     {
       "Identity": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg",
