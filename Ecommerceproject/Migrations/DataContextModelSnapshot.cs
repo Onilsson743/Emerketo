@@ -103,11 +103,8 @@ namespace Ecommerceproject.Migrations
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ColourEntity", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Colour")
                         .IsRequired()
@@ -117,6 +114,48 @@ namespace Ecommerceproject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colours");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "e44c6618-1318-4bed-8954-646555dec111",
+                            Colour = "Black"
+                        },
+                        new
+                        {
+                            Id = "554d9012-afcf-41c5-835a-8eb65a6f7a74",
+                            Colour = "White"
+                        },
+                        new
+                        {
+                            Id = "3b46fc46-d537-44d8-86f8-589b22ea242a",
+                            Colour = "Blue"
+                        },
+                        new
+                        {
+                            Id = "53c53857-d81e-4371-b528-b12681adf1cc",
+                            Colour = "Red"
+                        },
+                        new
+                        {
+                            Id = "58d57964-187c-42a9-9cae-fa26594360fb",
+                            Colour = "Green"
+                        },
+                        new
+                        {
+                            Id = "eb9853f5-3e45-4439-a717-32ee4c0a6965",
+                            Colour = "Yellow"
+                        },
+                        new
+                        {
+                            Id = "8780a633-43ad-45de-92cb-cfd867cead71",
+                            Colour = "Grey"
+                        },
+                        new
+                        {
+                            Id = "49a747c9-f8f0-4c78-b9a2-dbbd735627db",
+                            Colour = "Purple"
+                        });
                 });
 
             modelBuilder.Entity("Ecommerceproject.Models.Entities.ContactformEntity", b =>
@@ -272,8 +311,9 @@ namespace Ecommerceproject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ColourId")
-                        .HasColumnType("int");
+                    b.Property<string>("ColourId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid>("ProductArticleNumber")
                         .HasColumnType("uniqueidentifier");
@@ -455,19 +495,19 @@ namespace Ecommerceproject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f3f2e1c6-a6ca-4610-ae21-3e7a489af3d6",
+                            Id = "2520caa2-e835-4d68-a497-663c31b58c09",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "191506fc-d4b8-41c9-99d5-406edcd50395",
+                            Id = "f8446f7c-2f5c-4af8-b084-b614cba22267",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
-                            Id = "aa6f6285-84c9-45c3-95d9-841e0f5bf935",
+                            Id = "cf363f03-79f0-4fae-acc4-8214dfb023b1",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         });

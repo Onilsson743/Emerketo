@@ -13,15 +13,15 @@
 <div class="container product-overview ">
     <!-- Images -->
     <div class="images">
-        <!-- Maing image -->
-        <img class="main-image" src="/Images/ProductImages/@Model.ProductImageUrl" alt="">
+        <!-- Main image -->
+        <img class="main-image"id="detailsMainImage" src="/Images/ProductImages/@Model.ProductImageUrl" alt="">
 
         <!-- Lower images -->
         <span class="lower-images">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="https://cdn.pixabay.com/photo/2023/05/04/06/19/animal-7969289_1280.jpg" alt="" onclick="SetMainImage()">
+            <img src="https://cdn.pixabay.com/photo/2023/05/15/01/44/flower-7993995_1280.jpg" alt="" onclick="SetMainImage()">
+            <img src="https://cdn.pixabay.com/photo/2023/05/17/19/19/mannheim-8000879_1280.jpg" alt="" onclick="SetMainImage()">
+            <img src="https://cdn.pixabay.com/photo/2023/05/17/19/19/mannheim-8000879_1280.jpg" alt="" onclick="SetMainImage()">
         </span>
     </div>
 
@@ -41,24 +41,27 @@
 
         <h1>$ @Model.Price</h1>
 
-        <span class="ammount">
-            <span class="adjust-quantity">
-                <button>-</button>
+        <form class="productform">
+            <span class="ammount">
+                <span class="adjust-quantity">
+                    <button onclick="DecreaseAmount()" type="button">-</button>
                 
-                <h5>2</h5>
+                    <h5 id="productquantityselector" style="padding: 0 10px 0 10px;">2</h5>
                 
-                <button>+</button>
+                    <button onclick="IncreaseAmount()" type="button">+</button>
+                </span>
+                <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>
             </span>
-            <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>
-        </span>
 
-        <div class="colours">
-            @foreach (string colour in Model.Colours)
-            {
-                <input type="radio" name="Colours" class="color" style="accent-color: @colour;" />
-            }
-            <p>SKU: N/A</p>
-        </div>
+            <div class="colours">
+                @foreach (string colour in Model.Colours)
+                {
+                    <input type="radio" name="Colours"  id="@colour" class="color"  />
+                    <label for="@colour" style="background-color: @colour;"></label>
+                }
+                <p>SKU: N/A</p>
+            </div>
+        </form>
 
         <button class="btn-white">ADD to wishlist</button>
 

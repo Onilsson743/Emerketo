@@ -59,6 +59,40 @@ public class DataContext : IdentityDbContext<UserEntity>
             {
                 Id = 3,
                 Category = "Featured",
-            }            );
+            });
+
+        builder.Entity<ColourEntity>().HasData(
+            new ColourEntity
+            {
+                Colour = "Black"
+            },
+            new ColourEntity
+            {
+                Colour = "White"
+            },
+            new ColourEntity
+            {
+                Colour = "Blue"
+            },
+            new ColourEntity
+            {
+                Colour = "Red"
+            },
+            new ColourEntity
+            {
+                Colour = "Green"
+            },
+            new ColourEntity
+            {
+                Colour = "Yellow"
+            },
+            new ColourEntity
+            {
+                Colour = "Grey"
+            },
+            new ColourEntity
+            {
+                Colour = "Purple"
+            });
     }
 }

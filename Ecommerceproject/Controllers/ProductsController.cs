@@ -1,7 +1,5 @@
-﻿using Ecommerceproject.Models;
-using Ecommerceproject.Services.DatabaseServices;
+﻿using Ecommerceproject.Services.DatabaseServices;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace Ecommerceproject.Controllers
 {

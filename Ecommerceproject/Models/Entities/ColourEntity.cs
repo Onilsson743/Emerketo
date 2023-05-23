@@ -5,7 +5,8 @@ namespace Ecommerceproject.Models.Entities;
 public class ColourEntity
 {
     [Key]
-    public int Id { get; set; }
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+
     [Required]
     [StringLength(20)]
     public string Colour { get; set; } = string.Empty;

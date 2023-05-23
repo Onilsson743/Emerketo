@@ -144,6 +144,23 @@ function ValidateConfirmPassword() {
 }
 
 
+//Product details page image selector
+function SetMainImage() {
+    document.getElementById("detailsMainImage").src = event.target.src
+}
+
+function IncreaseAmount() {
+    var currentquantity = parseInt(document.getElementById("productquantityselector").innerText)
+    currentquantity++
+    document.getElementById("productquantityselector").innerHTML = currentquantity
+}
+function DecreaseAmount() {
+    var currentquantity = parseInt(document.getElementById("productquantityselector").innerText)
+    if (currentquantity > 0) 
+        currentquantity--
+    document.getElementById("productquantityselector").innerHTML = currentquantity
+}
+
 
 //Function to set the active page on the navbar
 //function SetActivePageColour() {

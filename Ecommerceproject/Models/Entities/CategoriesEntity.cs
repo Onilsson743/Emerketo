@@ -8,6 +8,7 @@ namespace Ecommerceproject.Models.Entities
 {
     public class CategoriesEntity
     {
+        [Key]
         public int Id { get; set; }
 
         public string Category { get; set; } = null!;

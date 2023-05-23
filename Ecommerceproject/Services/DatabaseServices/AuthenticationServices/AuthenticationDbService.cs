@@ -29,9 +29,6 @@ public class AuthenticationDbService
         _fileService = fileService;
     }
 
-
-
-
     #endregion
 
     //Check if user already exists

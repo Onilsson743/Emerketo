@@ -560,7 +560,8 @@ a:hover {
 }
 .product-overview .images .lower-images img {
   height: 80px;
-  width: 100%;
+  width: 115px;
+  object-fit: cover;
 }
 @media (min-width: 768px) {
   .product-overview .images .lower-images img {
@@ -639,7 +640,14 @@ a:hover {
   display: flex;
   gap: 5px;
 }
-.product-overview .details .colours .color {
+.product-overview .details .colours input {
+  height: 0px;
+  width: 0px;
+}
+.product-overview .details .colours input:checked + label {
+  outline: 4px solid black;
+}
+.product-overview .details .colours label {
   height: 20px;
   width: 20px;
   border-radius: 50%;

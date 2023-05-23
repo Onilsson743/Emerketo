@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K1zmnRn1ITsyRZr9DRzKgnfGkRU8TT0a0+afIEicQ1k=",
+  "Hash": "FMfW2l393rdk1hFBIywfn7o0BBOFZgHzyMird9XY4bY=",
   "Source": "Ecommerceproject",
   "BasePath": "_content/Ecommerceproject",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\ProductImages\\8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif"
+    },
+    {
+      "Identity": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\9b3d2c1e-861c-4e21-ad55-52e561c2a6dd_cola.jpg",
+      "SourceId": "Ecommerceproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\",
+      "BasePath": "_content/Ecommerceproject",
+      "RelativePath": "Images/ProductImages/9b3d2c1e-861c-4e21-ad55-52e561c2a6dd_cola.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ProductImages\\9b3d2c1e-861c-4e21-ad55-52e561c2a6dd_cola.jpg"
     },
     {
       "Identity": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg",
