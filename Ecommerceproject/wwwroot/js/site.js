@@ -149,6 +149,7 @@ function SetMainImage() {
     document.getElementById("detailsMainImage").src = event.target.src
 }
 
+//Details page increase or decrease buttons
 function IncreaseAmount() {
     var currentquantity = parseInt(document.getElementById("productquantityselector").innerText)
     currentquantity++
@@ -160,15 +161,4 @@ function DecreaseAmount() {
         currentquantity--
     document.getElementById("productquantityselector").innerHTML = currentquantity
 }
-
-
-//Function to set the active page on the navbar
-//function SetActivePageColour() {
-//    const query = window.location.href.split("/")
-//    try {
-//        document.getElementById(query[3]).classList.add("active")
-//    }
-    
-//}
-/*SetActivePageColour()*/
 
