@@ -4,6 +4,7 @@ using Ecommerceproject.Models.Entities;
 using Ecommerceproject.Services.Repositories;
 using Ecommerceproject.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Ecommerceproject.Services.DatabaseServices
 {
@@ -26,20 +27,15 @@ namespace Ecommerceproject.Services.DatabaseServices
         //Adds Product to db
         public async Task AddAsync(AddProductViewModel product)
         {
-            ProductEntity productEntity = new ProductEntity()
-            {
-                ProductName = product.ProductName,
-                Price = product.Price,
-                ProductDescription = product.ProductDescription,
-                ProductInStock = product.ProductInStock
-            };
-            if (product.ProductImage != null)
-            {
-                productEntity.ProductImageUrl = $"{productEntity.ArticleNumber}_{product.ProductImage.FileName}";
-                await _fileServices.SaveProductImageAsync(productEntity, product.ProductImage);
-            }
-            
-
+            ProductEntity productEntity = product;
+                
+            //    new ProductEntity()
+            //{
+            //    ProductName = product.ProductName,
+            //    Price = product.Price,
+            //    ProductDescription = product.ProductDescription,
+            //    ProductInStock = product.ProductInStock
+            //};       
 
             foreach (var category in product.ProductCategory)
             {
@@ -48,7 +44,7 @@ namespace Ecommerceproject.Services.DatabaseServices
                 {
                     categoryEntity = new CategoriesEntity { Category = category.Name };
                     _db.Categories.Add(categoryEntity);
-                    _db.SaveChanges();
+                    await _db.SaveChangesAsync();
                 }
 
                 var productCategoryEntity = new ProductCategoryEntity
@@ -83,12 +79,33 @@ namespace Ecommerceproject.Services.DatabaseServices
            
 
             await _productService.AddAsync(productEntity);
+
+            if (product.ProductImage != null)
+            {
+                foreach (var image in product.ProductImage)
+                {
+                    var productImageEntity = new ProductImageEntity
+                    {
+                        ImageUrl = $"{productEntity.ArticleNumber}_{image.FileName}",
+                        ProductId = productEntity.ArticleNumber
+                    };
+                    _db.ProductImages.Add(productImageEntity);
+                    await _db.SaveChangesAsync();
+                    await _fileServices.SaveProductImageAsync(productImageEntity, image);
+                    productEntity.ProductImageUrl!.Add(productImageEntity);
+                }
+            }
         }
 
         //Gets all products
         public async Task<IEnumerable<ProductModel>> GetAllAsync()
         {
-            IEnumerable<ProductEntity> result = await _db.Products.Include(x => x.Categories).ThenInclude(c => c.Categories).Include(x => x.Colours).ThenInclude(c => c.Colour).ToListAsync();
+            IEnumerable<ProductEntity> result = await _db.Products.
+                Include(x => x.Categories).ThenInclude(c => c.Categories).
+                Include(x => x.Colours).ThenInclude(c => c.Colour).
+                Include(x => x.ProductImageUrl).
+                ToListAsync();
+
             if (result != null)
             {
                 List<ProductModel> model = new List<ProductModel>();
@@ -106,6 +123,14 @@ namespace Ecommerceproject.Services.DatabaseServices
                     {
                         colours.Add(colour.Colour.Colour);
                     }
+
+                    var images = new List<string>();
+                    foreach (var imageUrl in product.ProductImageUrl!)
+                    {
+                        images.Add(imageUrl.ImageUrl);
+                    }
+                                        
+
                     model.Add(new ProductModel
                     {
                         Id = product.ArticleNumber,
@@ -113,7 +138,7 @@ namespace Ecommerceproject.Services.DatabaseServices
                         Price = Math.Round(product.Price, 2),
                         ProductDescription = product.ProductDescription,
                         ProductInStock = product.ProductInStock,
-                        ProductImageUrl = product.ProductImageUrl!,
+                        ProductImageUrl = images,
                         ProductCategory = categories,
                         Colours = colours                        
                     });
@@ -127,7 +152,11 @@ namespace Ecommerceproject.Services.DatabaseServices
         //Gets one product
         public async Task<ProductModel> GetOneAsync(Guid articlenumber)
         {
-            var result = await _db.Products.Include(x => x.Categories).ThenInclude(c => c.Categories).Include(x => x.Colours).ThenInclude(c => c.Colour).FirstOrDefaultAsync(x => x.ArticleNumber == articlenumber);
+            var result = await _db.Products.
+                Include(x => x.Categories).ThenInclude(c => c.Categories).
+                Include(x => x.Colours).ThenInclude(c => c.Colour).
+                Include(x => x.ProductImageUrl).
+                FirstOrDefaultAsync(x => x.ArticleNumber == articlenumber);
             if (result != null)
             {
                 var categories = new List<string>();
@@ -141,6 +170,13 @@ namespace Ecommerceproject.Services.DatabaseServices
                 {
                     colours.Add(colour.Colour.Colour);
                 }
+
+                var images = new List<string>();
+                foreach (var imageUrl in result.ProductImageUrl!)
+                {
+                    images.Add(imageUrl.ImageUrl);
+                }
+
                 var product = new ProductModel
                 {
                     Id = result.ArticleNumber,
@@ -149,7 +185,7 @@ namespace Ecommerceproject.Services.DatabaseServices
                     ProductDescription = result.ProductDescription,
                     ProductCategory = categories,
                     ProductInStock = result.ProductInStock,
-                    ProductImageUrl = result.ProductImageUrl!,
+                    ProductImageUrl = images,
                     Colours = colours
 
                 };

@@ -1,4 +1,26 @@
 ﻿@{
+    ViewData["Title"] = "All Products";
 }
+@model IEnumerable<ProductModel>
 
-<h1 style="padding: 8rem;">Products Page</h1>
+<div class="container all-products">
+    @{
+        if (Model.Any())
+        {
+            foreach (var product in Model)
+            {
+                <div class="products">
+                    <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardSmall.cshtml" model="product" />
+                </div>
+            }
+        }
+        else
+        {
+            <div style="width: 100%;">
+                <h1 style="text-align: center; width: 100%;">No Products Available!</h1>
+            </div>
+
+        }
+
+    }
+</div>

@@ -1,11 +1,9 @@
 .all-products {
     display: flex;
-    .products {
-        display: flex;
-        justify-content: center; 
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
     .fixed-btn {
         position: fixed;
         bottom: 100px;

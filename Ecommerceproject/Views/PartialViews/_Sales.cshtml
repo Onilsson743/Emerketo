@@ -1,21 +1,13 @@
-﻿
+﻿@model List<ProductModel>
 
 
 <div class="main-sales ">
     <div class="container">
-        <!-- Cards -->
-        <div class="card">
-            <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mac computer</h5>
-                <span>
-                    <p class="card-text">$99.00</p>
-                    <button>
-                        <i class="fa-regular fa-cart-plus"></i>
-                    </button>
-                </span>
-            </div>
-        </div>
+
+        @if (Model.Count > 0)
+        {
+            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardMedium.cshtml" model="Model[0]" />
+        }
 
         <div class="card info-card">
             <h6>UP TO SELL</h6>
@@ -25,17 +17,9 @@
             <a href="">Discover More</a>
         </div>
 
-        <div class="card">
-            <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mac computer</h5>
-                <span>
-                    <p class="card-text">$99.00</p>
-                    <button>
-                        <i class="fa-regular fa-cart-plus"></i>
-                    </button>
-                </span>
-            </div>
-        </div>
+        @if (Model.Count > 1)
+        {
+            <partial name="/Views/PartialViews/Components/ProductCards/_ProductCardMedium.cshtml" model="Model[1]" />
+        }
     </div>
 </div>

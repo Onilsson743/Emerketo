@@ -23,6 +23,7 @@ public class DataContext : IdentityDbContext<UserEntity>
     public DbSet<ProductColoursEntity> ProductColours { get; set; }
     public DbSet<ProductEntity> Products { get; set; }    
     public DbSet<UserAddressEntity> UserAdresses { get; set; }
+    public DbSet<ProductImageEntity> ProductImages { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

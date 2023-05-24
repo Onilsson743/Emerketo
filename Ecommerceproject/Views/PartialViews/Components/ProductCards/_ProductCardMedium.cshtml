@@ -1,1 +1,31 @@
 ﻿
+@model ProductModel
+
+
+ <!-- Medium Card -->
+<div class="card card-medium">
+    <a asp-controller="Products" asp-action="Details" asp-route-articlenumber="@Model.Id">
+        @if (Model.ProductImageUrl != null)
+        {
+            if (Model.ProductImageUrl.Count != 0)
+            {
+                <img src="/Images/ProductImages/@Model.ProductImageUrl[0]" class="card-img-top" alt="...">
+            }
+
+        }
+        else
+        {
+            <img src="https://cdn.pixabay.com/photo/2017/06/08/17/32/not-found-2384304_960_720.jpg" class="card-img-top" alt="...">
+        }
+
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">@Model.ProductName</h5>
+        <span>
+            <p class="card-text">$ @Model.Price</p>
+            <button>
+                <i class="fa-regular fa-cart-plus"></i>
+            </button>
+        </span>
+    </div>
+</div>

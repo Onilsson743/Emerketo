@@ -13,6 +13,6 @@ public class ProductModel
     public string ProductDescription { get; set; } = null!;
     public List<string> ProductCategory { get; set; } = null!;
     public int ProductInStock { get; set; }
-    public string? ProductImageUrl { get; set; }
+    public List<string>? ProductImageUrl { get; set; }
     public List<string> Colours { get; set; } = new List<string>();
 }

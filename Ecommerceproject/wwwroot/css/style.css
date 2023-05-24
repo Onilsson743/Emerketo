@@ -42,6 +42,8 @@ a:hover {
 .card {
   transition: 0.2s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-height: 350px;
 }
 .card:hover {
   scale: 1.05;
@@ -49,6 +51,11 @@ a:hover {
 .card img {
   max-height: 220px;
   object-fit: cover;
+}
+.card .card-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .card .card-body span {
   display: flex;
@@ -68,6 +75,13 @@ a:hover {
   color: #FA3150;
 }
 
+.card-medium {
+  min-height: 430px !important;
+}
+.card-medium img {
+  max-height: 310px !important;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -78,8 +92,14 @@ a:hover {
 }
 .form .split-input {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .form .split-input {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
 }
 .form .split-input span {
   display: flex;
@@ -547,6 +567,7 @@ a:hover {
 .product-overview .images .main-image {
   height: 400px;
   width: 100%;
+  object-fit: contain;
 }
 @media (min-width: 1200px) {
   .product-overview .images .main-image {
@@ -605,7 +626,7 @@ a:hover {
 }
 .product-overview .details .ammount {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 .product-overview .details .ammount .adjust-quantity {
   display: flex;
@@ -614,23 +635,18 @@ a:hover {
   height: 40px;
   width: 132px;
 }
-.product-overview .details .ammount .adjust-quantity span {
-  border: 2px solid #F3F2F2;
-  height: 40px;
-  width: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.product-overview .details .ammount .adjust-quantity span h5 {
+.product-overview .details .ammount .adjust-quantity h5 {
   margin: 0;
+  padding: 0 10px 0 10px;
+  width: 40px;
+  text-align: center;
 }
 .product-overview .details .ammount .adjust-quantity button {
   width: 44px;
   height: 40px;
   background-color: white;
   border: 2px solid #F3F2F2;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .product-overview .details .ammount .adjust-quantity button:hover {
   background-color: #F3F2F2;
@@ -639,6 +655,7 @@ a:hover {
 .product-overview .details .colours {
   display: flex;
   gap: 5px;
+  margin-top: 20px;
 }
 .product-overview .details .colours input {
   height: 0px;
@@ -752,11 +769,8 @@ a:hover {
 
 .all-products {
   display: flex;
-}
-.all-products .products {
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 .all-products .fixed-btn {

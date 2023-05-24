@@ -1,131 +1,135 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\Logo.svg",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\Logo.svg",
       "PackagePath": "staticwebassets\\Images\\Logo.svg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif",
-      "PackagePath": "staticwebassets\\Images\\ProductImages\\8febd207-e268-42de-a489-d60b8cbd6a8b_dator.avif"
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665829989054.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665829989054.jpg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\9b3d2c1e-861c-4e21-ad55-52e561c2a6dd_cola.jpg",
-      "PackagePath": "staticwebassets\\Images\\ProductImages\\9b3d2c1e-861c-4e21-ad55-52e561c2a6dd_cola.jpg"
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665830308937.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665830308937.jpg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg",
-      "PackagePath": "staticwebassets\\Images\\ProductImages\\c87cd7c3-ca5a-4f76-b5a3-08d59f7d20e4_cola.jpg"
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665831061683.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_1665831061683.jpg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg",
-      "PackagePath": "staticwebassets\\Images\\ProfileImages\\o.nilsson743@gmail.com_1665831061683.jpg"
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_Bild.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProductImages\\aed0d262-6501-47d6-a5d2-3e10607de342_Bild.jpg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\o.nilsson743@gmail.com_Skada.jpg",
-      "PackagePath": "staticwebassets\\Images\\ProfileImages\\o.nilsson743@gmail.com_Skada.jpg"
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProductImages\\f50d5bd4-fb86-49af-9e49-48303e5e62ca_Bild.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProductImages\\f50d5bd4-fb86-49af-9e49-48303e5e62ca_Bild.jpg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\ProfileImages\\a@a.com_Bild.jpg",
+      "PackagePath": "staticwebassets\\Images\\ProfileImages\\a@a.com_Bild.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\Images\\Stars.svg",
       "PackagePath": "staticwebassets\\Images\\Stars.svg"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\css\\style.min.css",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\css\\style.min.css",
       "PackagePath": "staticwebassets\\css\\style.min.css"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_addproductform.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_addproductform.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_addproductform.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_allproducts.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_allproducts.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_backofficemenu.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_backofficemenu.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_backofficemenu.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_bestcollection.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_bestcollection.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_footer.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_footer.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_footer.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_header.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_header.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_header.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_mainsales.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_mainsales.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_mainsales.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_maintopselling.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_maintopselling.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_maintopselling.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_navbar.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_navbar.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_navbar.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_profile.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_profile.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_profile.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\_subscribe.scss",
       "PackagePath": "staticwebassets\\scss\\components\\_subscribe.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_headerpicture.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_headerpicture.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_headerpicture.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_indepthdetails.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_indepthdetails.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_indepthdetails.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_lowerproductrow.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_lowerproductrow.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_lowerproductrow.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_productoverview.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_productoverview.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_productoverview.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_relatedproducts.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\components\\productdetailsview\\_relatedproducts.scss",
       "PackagePath": "staticwebassets\\scss\\components\\productdetailsview\\_relatedproducts.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\global\\_elements.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\global\\_elements.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_elements.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\global\\_globalthemes.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\global\\_globalthemes.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_globalthemes.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\global\\_mixins.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\global\\_mixins.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_mixins.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\global\\_theme.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\global\\_theme.scss",
       "PackagePath": "staticwebassets\\scss\\global\\_theme.scss"
     },
     {
-      "Id": "C:\\Users\\onils\\Desktop\\Emerketo\\Ecommerceproject\\wwwroot\\scss\\style.scss",
+      "Id": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\wwwroot\\scss\\style.scss",
       "PackagePath": "staticwebassets\\scss\\style.scss"
     },
     {

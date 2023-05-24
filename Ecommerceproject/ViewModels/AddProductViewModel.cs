@@ -1,4 +1,5 @@
 ﻿using Ecommerceproject.Models;
+using Ecommerceproject.Models.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerceproject.ViewModels
@@ -26,9 +27,20 @@ namespace Ecommerceproject.ViewModels
 
         [Display(Name = "Image*")]
         [DataType(DataType.Upload)]
-        public IFormFile? ProductImage { get; set; }
+        public IFormFile[]? ProductImage { get; set; }
 
         public List<CheckBoxModel> ColoursList { get; set; } = new List<CheckBoxModel>();
 
+
+        public static implicit operator ProductEntity(AddProductViewModel product)
+        {
+            return new ProductEntity
+            {
+                ProductName = product.ProductName,
+                Price = product.Price,
+                ProductDescription = product.ProductDescription,
+                ProductInStock = product.ProductInStock
+            };
+        }
     }
 }

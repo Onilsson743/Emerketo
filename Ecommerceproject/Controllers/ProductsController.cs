@@ -1,4 +1,5 @@
-﻿using Ecommerceproject.Services.DatabaseServices;
+﻿using Ecommerceproject.Models;
+using Ecommerceproject.Services.DatabaseServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerceproject.Controllers
@@ -11,10 +12,10 @@ namespace Ecommerceproject.Controllers
             _productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewData["Title"] = "Products";
-            return View();
+            IEnumerable<ProductModel> model = await _productService.GetAllAsync();
+            return View(model);
         }
 
 

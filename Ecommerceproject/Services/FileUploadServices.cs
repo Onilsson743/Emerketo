@@ -12,11 +12,11 @@ public class FileUploadServices
         _webHostEnvironment = webHostEnvironment;
     }
 
-    public async Task<bool> SaveProductImageAsync(ProductEntity product, IFormFile image)
+    public async Task<bool> SaveProductImageAsync(ProductImageEntity productImage, IFormFile image)
     {
         try
         {
-            string imagePath = $"{_webHostEnvironment.WebRootPath}/Images/ProductImages/{product.ProductImageUrl}";
+            string imagePath = $"{_webHostEnvironment.WebRootPath}/Images/ProductImages/{productImage.ImageUrl}";
             using var stream = new FileStream(imagePath, FileMode.Create);
             await image.CopyToAsync(stream);
             return true;

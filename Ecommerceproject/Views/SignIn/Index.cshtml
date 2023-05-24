@@ -11,12 +11,18 @@
             <label asp-for="Email"></label>
             <a asp-controller="SignIn" asp-action="Registration">Don't have an Account yet?</a>
         </span>        
-        <input asp-for="Email" type="email">
+        <input asp-for="Email" type="text" id="FormEmail" oninput="ValidateEmail()">
         <small class="text-danger"><span asp-validation-for="Email"></span></small>
+        <small class="text-danger"><p id="EmailError"></p></small>
 
         <label asp-for="Password"></label>
-        <input asp-for="Password" type="password">
-        <small class="text-danger"><span asp-validation-for="Password"></span></small>
+        <input asp-for="Password" id="FormPassword" oninput="ValidatePassword()" type="password">
+        <small class="text-danger d-none"><span asp-validation-for="Password"></span></small>
+        <small class="text-danger d-none" id="PasswordLengthError"><p id="PasswordLengthErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordLowerCharacterError"><p id="PasswordLowerCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordUpperCharacterError"><p id="PasswordUpperCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordSpecialCharacterError"><p id="PasswordSpecialCharacterErrorMessage"></p></small>
+        <small class="text-danger d-none" id="PasswordNumberError"><p id="PasswordNumberErrorMessage"></p></small>
 
         <span>
             <input asp-for="KeepMeSignedIn" type="checkbox" />

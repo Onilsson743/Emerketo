@@ -1,7 +1,6 @@
-﻿using Ecommerceproject.Models;
+﻿
 using Ecommerceproject.Models.Entities;
-using Ecommerceproject.Services;
-using Ecommerceproject.Services.DatabaseServices;
+
 using Ecommerceproject.Services.DatabaseServices.AuthenticationServices;
 using Ecommerceproject.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -13,20 +12,23 @@ public class SignInController : Controller
 {
     #region
     private readonly AuthenticationDbService _authServices;
-    private readonly UserDbServices _userServices;
-    private readonly FileUploadServices _fileServices;
+    private readonly SignInManager<UserEntity> _signInManager;
 
-    public SignInController(AuthenticationDbService authServices, UserDbServices userServices, FileUploadServices fileServices)
+
+    public SignInController(AuthenticationDbService authServices, SignInManager<UserEntity> signInManager)
     {
         _authServices = authServices;
-        _userServices = userServices;
-        _fileServices = fileServices;
+        _signInManager = signInManager;
     }
     #endregion
 
     #region SignIn
     public IActionResult Index()
     {
+        if (_signInManager.IsSignedIn(User))
+        {
+            return RedirectToAction("Index", "Home");
+        }
         return View();
     }
     [HttpPost]

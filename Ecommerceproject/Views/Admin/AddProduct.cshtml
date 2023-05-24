@@ -1,6 +1,7 @@
 ﻿
 @model AddProductViewModel
 
+@*Form to add a product to the database*@
 <div class="AddProductForm container">
     <h5 style="color: #636363; margin-top: 100px;">Add a new product.</h5>
     <form method="post" enctype="multipart/form-data" class="form mt-4">
@@ -48,14 +49,12 @@
                 <label asp-for="ColoursList[i]">@Model.ColoursList[i].Name</label>
                 <input asp-for="@Model.ColoursList[i].IsChecked" type="checkbox" />
                 <input asp-for="@Model.ColoursList[i].Name" type="hidden" />
-            }
-            <h6>If you want to add a new colour please scroll to the bottom of the page</h6>
-            
+            }            
         </div>
         
         <button type="submit" class="btn-theme">Add Product</button>
     </form>
-    <partial name="/Views/PartialViews/Components/Forms/_AddColourForm.cshtml" />
+
 </div>
 
 
