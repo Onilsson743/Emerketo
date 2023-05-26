@@ -15,7 +15,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(x =>
     {
         x.UseSqlServer(builder.Configuration.GetConnectionString("Sql"));
-        x.EnableSensitiveDataLogging();
     }
 );
 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\Ecommerceproject.csproj": {}
+    "C:\\Users\\onils\\Desktop\\Test\\Ecommerceproject\\Ecommerceproject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\Ecommerceproject.csproj": {
+    "C:\\Users\\onils\\Desktop\\Test\\Ecommerceproject\\Ecommerceproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\Ecommerceproject.csproj",
+        "projectUniqueName": "C:\\Users\\onils\\Desktop\\Test\\Ecommerceproject\\Ecommerceproject.csproj",
         "projectName": "Ecommerceproject",
-        "projectPath": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\Ecommerceproject.csproj",
-        "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Oscar\\OneDrive\\Skrivbord\\win22\\Asp.Net.Assignment\\Ecommerceproject\\obj\\",
+        "projectPath": "C:\\Users\\onils\\Desktop\\Test\\Ecommerceproject\\Ecommerceproject.csproj",
+        "packagesPath": "C:\\Users\\onils\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\onils\\Desktop\\Test\\Ecommerceproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\onils\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
